@@ -1,0 +1,103 @@
+{
+  "schema_version": "ab_poc.schema.v1",
+  "config_version": "ab_poc_v1",
+  "scenario_version": "m10.3.scenario.v1",
+  "participants": [
+    {
+      "id": "akane",
+      "name": "あかね",
+      "interests": ["地域", "暮らし"],
+      "stance": "積極的",
+      "purpose": "地域の人と暮らしの工夫を見つけたい",
+      "conversation_style": "明るく先に声をかけ、相手の話を広げる",
+      "opens_up_when": "地域や暮らしの具体的な話題が出たとき"
+    },
+    {
+      "id": "koharu",
+      "name": "こはる",
+      "interests": ["展示", "デザイン", "ものづくり"],
+      "stance": "ふつう",
+      "purpose": "展示やものづくりのアイデアを共有したい",
+      "conversation_style": "穏やかに相手の考えを聞き、具体例を添える",
+      "opens_up_when": "展示やデザインの工夫を安心して話せるとき"
+    },
+    {
+      "id": "midori",
+      "name": "みどり",
+      "interests": ["ものづくり", "技術"],
+      "stance": "慎重",
+      "purpose": "技術を役立つ形に結びつけたい",
+      "conversation_style": "考えてから短く答え、具体的な話で少しずつ開く",
+      "opens_up_when": "技術やものづくりの目的が明確になったとき"
+    },
+    {
+      "id": "kurumi",
+      "name": "くるみ",
+      "interests": ["食", "散歩", "暮らし"],
+      "stance": "ふつう",
+      "purpose": "食や散歩を通じて場の居心地をよくしたい",
+      "conversation_style": "自然体で相手に合わせ、身近な話から会話を続ける",
+      "opens_up_when": "食や散歩など日常の話題をゆっくり話せるとき"
+    }
+  ],
+  "conditions": [
+    {
+      "id": "A",
+      "label": "A：直接既知なし",
+      "online_known_pairs": [],
+      "online_experience": {
+        "id": "none",
+        "version": "m10.3.online_experience.v1",
+        "kind": "none",
+        "participants": [],
+        "topic": null,
+        "exchange_count": 0,
+        "memory_summary": "直接交流なし"
+      }
+    },
+    {
+      "id": "B",
+      "label": "B：あかね・みどりだけ直接既知",
+      "online_known_pairs": [["akane", "midori"]],
+      "online_experience": {
+        "id": "akane_midori_technology_exchange",
+        "version": "m10.3.online_experience.v1",
+        "kind": "direct_exchange",
+        "participants": ["akane", "midori"],
+        "topic": "技術",
+        "exchange_count": 1,
+        "memory_summary": "技術について1往復した"
+      }
+    }
+  ],
+  "rules": {
+    "turns": 8,
+    "common_topic": "この場所でやってみたいこと",
+    "selection": {
+      "base": 1.0,
+      "online_known_bonus": 1.0,
+      "shared_interest_bonus": 1.0,
+      "prior_positive_bonus": 0.5,
+      "repeated_target_multiplier": 0.5
+    },
+    "reaction": {
+      "base": 1,
+      "online_known_bonus": 2,
+      "topic_match_bonus": 2,
+      "prior_positive_bonus": 1,
+      "proactive_actor_bonus": 1,
+      "cautious_actor_penalty": -1,
+      "cautious_target_penalty": -1,
+      "jitter_values": [-1, 0, 1],
+      "positive_threshold": 3,
+      "neutral_threshold": 1
+    },
+    "relationship": {
+      "acquaintance_conversations": 2,
+      "acquaintance_positive": 1,
+      "familiar_conversations": 3,
+      "familiar_positive": 2,
+      "familiar_requires_bidirectional": true
+    }
+  }
+}

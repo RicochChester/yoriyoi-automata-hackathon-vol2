@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yoriyoi A/B LAB｜分析</title>
+    <link rel="stylesheet" href="results.css?v=m23-analysis-1" />
+  </head>
+  <body>
+    <main class="analysis-shell">
+      <header class="masthead">
+        <div>
+          <p class="kicker">YORIYOI × AUTOMATA / A/B ANALYSIS / SAVED RUN</p>
+          <h1>A/B分析</h1>
+          <p id="runMeta" class="subtitle">保存済み履歴を読み込み中…</p>
+        </div>
+        <div class="system-mark">[ STORED RESULT ]</div>
+      </header>
+
+      <section id="errorPanel" class="error-panel" role="alert" hidden>
+        <h2>分析を表示できません</h2>
+        <p id="errorMessage"></p>
+        <a href="../">会話画面へ戻る</a>
+      </section>
+
+      <div id="analysisContent" hidden>
+        <section class="comparison-grid" aria-label="条件Aと条件Bの比較">
+          <article class="condition-card condition-a">
+            <p class="condition-kicker">CONDITION A</p>
+            <h2 id="conditionATitle">条件A</h2>
+            <p id="conditionASetup" class="condition-setup"></p>
+          </article>
+          <article class="condition-card condition-b">
+            <p class="condition-kicker">CONDITION B</p>
+            <h2 id="conditionBTitle">条件B</h2>
+            <p id="conditionBSetup" class="condition-setup"></p>
+          </article>
+        </section>
+
+        <section class="metrics-panel panel" aria-labelledby="metricsHeading">
+          <div class="panel-heading"><span id="metricsHeading">保存結果の主要指標</span><strong>差分：B − A</strong></div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>指標</th><th>条件A</th><th>条件B</th><th>差分</th></tr></thead>
+              <tbody id="metricsBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="reading-panel panel" aria-labelledby="readingHeading">
+          <div class="panel-heading"><span id="readingHeading">短い読み取り</span><strong>保存値から記述</strong></div>
+          <p id="analysisText"></p>
+          <p class="caution">注意：これは保存された単一試行の結果を比較したものです。差分は因果効果や人の行動を予測・保証するものではありません。</p>
+        </section>
+      </div>
+
+      <footer><a href="../">← 会話画面へ戻る</a><span id="footerMeta">履歴ID：—</span></footer>
+    </main>
+    <script src="results.js?v=m23-analysis-1"></script>
+  </body>
+</html>

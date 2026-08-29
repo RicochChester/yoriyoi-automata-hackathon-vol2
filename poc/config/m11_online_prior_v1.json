@@ -1,0 +1,25 @@
+{
+  "schema_version": "ab_poc.schema.v1",
+  "config_version": "m11_online_prior_v1",
+  "scenario_version": "m11.online_prior.scenario.v1",
+  "participants": [
+    {"id": "akane", "name": "あかね", "interests": ["地域", "暮らし"], "stance": "積極的", "purpose": "地域の人と暮らしの工夫を見つけたい", "conversation_style": "明るく先に声をかけ、相手の話を広げる", "opens_up_when": "地域や暮らしの具体的な話題が出たとき"},
+    {"id": "koharu", "name": "こはる", "interests": ["展示", "デザイン", "ものづくり"], "stance": "ふつう", "purpose": "展示やものづくりのアイデアを共有したい", "conversation_style": "穏やかに相手の考えを聞き、具体例を添える", "opens_up_when": "展示やデザインの工夫を安心して話せるとき"},
+    {"id": "midori", "name": "みどり", "interests": ["ものづくり", "技術"], "stance": "慎重", "purpose": "技術を役立つ形に結びつけたい", "conversation_style": "考えてから短く答え、具体的な話で少しずつ開く", "opens_up_when": "技術やものづくりの目的が明確になったとき"},
+    {"id": "kurumi", "name": "くるみ", "interests": ["食", "散歩", "暮らし"], "stance": "ふつう", "purpose": "食や散歩を通じて場の居心地をよくしたい", "conversation_style": "自然体で相手に合わせ、身近な話から会話を続ける", "opens_up_when": "食や散歩など日常の話題をゆっくり話せるとき"}
+  ],
+  "conditions": [
+    {"id": "N0", "label": "N0：直接交流なし", "online_known_pairs": [], "online_experience": {"id": "none", "version": "m11.online_experience.v1", "kind": "none", "participants": [], "topic": null, "exchange_count": 0, "memory_summary": "直接交流なし"}},
+    {"id": "P2", "label": "P2：2人でテーマ交流", "online_known_pairs": [["akane", "midori"]], "online_experience": {"id": "pair_thematic_exchange", "version": "m11.online_experience.v1", "kind": "direct_exchange", "participants": ["akane", "midori"], "topic": "地域・コミュニティでやってみたいこと", "exchange_count": 1, "memory_summary": "地域やコミュニティでやってみたいことを話した"}},
+    {"id": "P3", "label": "P3：2人で小さな共同作業", "online_known_pairs": [["akane", "midori"]], "online_experience": {"id": "pair_shared_space_task", "version": "m11.online_experience.v1", "kind": "pair_collaborative_task", "participants": ["akane", "midori"], "topic": "共有スペースの企画", "exchange_count": 1, "memory_summary": "共有スペースでできる活動を一緒に考えた"}},
+    {"id": "G2", "label": "G2：4人でテーマ交流", "online_known_pairs": [], "online_experience": {"id": "group_thematic_exchange", "version": "m11.online_experience.v1", "kind": "group_thematic_exchange", "participants": ["akane", "koharu", "midori", "kurumi"], "topic": "地域・コミュニティでやってみたいこと", "exchange_count": 1, "memory_summary": "4人で地域やコミュニティでやってみたいことを話した"}},
+    {"id": "G3", "label": "G3：4人で小さな共同作業", "online_known_pairs": [], "online_experience": {"id": "group_shared_space_task", "version": "m11.online_experience.v1", "kind": "group_collaborative_task", "participants": ["akane", "koharu", "midori", "kurumi"], "topic": "共有スペースの企画", "exchange_count": 1, "memory_summary": "4人で共有スペースでできる活動を一緒に考えた"}}
+  ],
+  "rules": {
+    "turns": 8,
+    "common_topic": "この場所でやってみたいこと",
+    "selection": {"base": 1.0, "online_known_bonus": 1.0, "shared_interest_bonus": 1.0, "prior_positive_bonus": 0.5, "repeated_target_multiplier": 0.5},
+    "reaction": {"base": 1, "online_known_bonus": 2, "topic_match_bonus": 2, "prior_positive_bonus": 1, "proactive_actor_bonus": 1, "cautious_actor_penalty": -1, "cautious_target_penalty": -1, "jitter_values": [-1, 0, 1], "positive_threshold": 3, "neutral_threshold": 1},
+    "relationship": {"acquaintance_conversations": 2, "acquaintance_positive": 1, "familiar_conversations": 3, "familiar_positive": 2, "familiar_requires_bidirectional": true}
+  }
+}

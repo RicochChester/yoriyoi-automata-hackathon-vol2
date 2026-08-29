@@ -1,0 +1,3877 @@
+{
+  "schema_version": "ab_poc.run.v2",
+  "config_version": "ab_poc_v1",
+  "root_seed": 1,
+  "participants": [
+    {
+      "id": "akane",
+      "name": "あかね",
+      "interests": [
+        "地域",
+        "暮らし"
+      ],
+      "stance": "積極的"
+    },
+    {
+      "id": "koharu",
+      "name": "こはる",
+      "interests": [
+        "展示",
+        "デザイン",
+        "ものづくり"
+      ],
+      "stance": "ふつう"
+    },
+    {
+      "id": "midori",
+      "name": "みどり",
+      "interests": [
+        "ものづくり",
+        "技術"
+      ],
+      "stance": "慎重"
+    },
+    {
+      "id": "kurumi",
+      "name": "くるみ",
+      "interests": [
+        "食",
+        "散歩",
+        "暮らし"
+      ],
+      "stance": "ふつう"
+    }
+  ],
+  "conditions": {
+    "A": {
+      "id": "A",
+      "label": "A：直接既知なし",
+      "online_known_pairs": [],
+      "online_experience": {
+        "id": "none",
+        "version": "m10.3.online_experience.v1",
+        "kind": "none",
+        "participants": [],
+        "topic": null,
+        "exchange_count": 0,
+        "memory_summary": "直接交流なし"
+      }
+    },
+    "B": {
+      "id": "B",
+      "label": "B：あかね・みどりだけ直接既知",
+      "online_known_pairs": [
+        [
+          "akane",
+          "midori"
+        ]
+      ],
+      "online_experience": {
+        "id": "akane_midori_technology_exchange",
+        "version": "m10.3.online_experience.v1",
+        "kind": "direct_exchange",
+        "participants": [
+          "akane",
+          "midori"
+        ],
+        "topic": "技術",
+        "exchange_count": 1,
+        "memory_summary": "技術について1往復した"
+      }
+    }
+  },
+  "actor_order": [
+    "kurumi",
+    "akane",
+    "midori",
+    "koharu"
+  ],
+  "turn_order": [
+    "kurumi",
+    "akane",
+    "midori",
+    "koharu",
+    "kurumi",
+    "akane",
+    "midori",
+    "koharu"
+  ],
+  "runs": {
+    "A": {
+      "schema_version": "ab_poc.run.v2",
+      "config_version": "ab_poc_v1",
+      "root_seed": 1,
+      "condition": {
+        "id": "A",
+        "label": "A：直接既知なし",
+        "online_known_pairs": [],
+        "online_experience": {
+          "id": "none",
+          "version": "m10.3.online_experience.v1",
+          "kind": "none",
+          "participants": [],
+          "topic": null,
+          "exchange_count": 0,
+          "memory_summary": "直接交流なし"
+        }
+      },
+      "scenario": {
+        "version": "m10.3.scenario.v1",
+        "online_experience": {
+          "id": "none",
+          "version": "m10.3.online_experience.v1",
+          "kind": "none",
+          "participants": [],
+          "topic": null,
+          "exchange_count": 0,
+          "memory_summary": "直接交流なし"
+        }
+      },
+      "condition_id": "A",
+      "participants": [
+        {
+          "id": "akane",
+          "name": "あかね",
+          "interests": [
+            "地域",
+            "暮らし"
+          ],
+          "stance": "積極的"
+        },
+        {
+          "id": "koharu",
+          "name": "こはる",
+          "interests": [
+            "展示",
+            "デザイン",
+            "ものづくり"
+          ],
+          "stance": "ふつう"
+        },
+        {
+          "id": "midori",
+          "name": "みどり",
+          "interests": [
+            "ものづくり",
+            "技術"
+          ],
+          "stance": "慎重"
+        },
+        {
+          "id": "kurumi",
+          "name": "くるみ",
+          "interests": [
+            "食",
+            "散歩",
+            "暮らし"
+          ],
+          "stance": "ふつう"
+        }
+      ],
+      "rules": {
+        "turns": 8,
+        "common_topic": "この場所でやってみたいこと",
+        "selection": {
+          "base": 1.0,
+          "online_known_bonus": 1.0,
+          "shared_interest_bonus": 1.0,
+          "prior_positive_bonus": 0.5,
+          "repeated_target_multiplier": 0.5
+        },
+        "reaction": {
+          "base": 1,
+          "online_known_bonus": 2,
+          "topic_match_bonus": 2,
+          "prior_positive_bonus": 1,
+          "proactive_actor_bonus": 1,
+          "cautious_actor_penalty": -1,
+          "cautious_target_penalty": -1,
+          "jitter_values": [
+            -1,
+            0,
+            1
+          ],
+          "positive_threshold": 3,
+          "neutral_threshold": 1
+        },
+        "relationship": {
+          "acquaintance_conversations": 2,
+          "acquaintance_positive": 1,
+          "familiar_conversations": 3,
+          "familiar_positive": 2,
+          "familiar_requires_bidirectional": true
+        }
+      },
+      "participant_provider": {
+        "name": "rule-participant",
+        "version": "ab_poc_rules_v1"
+      },
+      "relationship_evaluator": {
+        "name": "rule-relationship",
+        "version": "ab_poc_rules_v1"
+      },
+      "actor_order": [
+        "kurumi",
+        "akane",
+        "midori",
+        "koharu"
+      ],
+      "turn_order": [
+        "kurumi",
+        "akane",
+        "midori",
+        "koharu",
+        "kurumi",
+        "akane",
+        "midori",
+        "koharu"
+      ],
+      "turns": [
+        {
+          "turn": 1,
+          "actor": "kurumi",
+          "target": "akane",
+          "topic": "暮らし",
+          "approach": "この話題、どう思いますか？",
+          "response": "ふつう",
+          "reply": "なるほど、そうなんですね。",
+          "reaction": "neutral",
+          "fallback": {
+            "response": false,
+            "response_reason": null
+          },
+          "decision_affect": {
+            "actor": "kurumi",
+            "outgoing": [
+              {
+                "candidate": "akane",
+                "value": 0
+              },
+              {
+                "candidate": "koharu",
+                "value": 0
+              },
+              {
+                "candidate": "midori",
+                "value": 0
+              }
+            ]
+          },
+          "affect_transition": {
+            "turn": 1,
+            "receiver": "akane",
+            "initiator": "kurumi",
+            "reaction": "neutral",
+            "delta": 0,
+            "before": 0,
+            "after": 0,
+            "direction": {
+              "receiver": "akane",
+              "initiator": "kurumi"
+            },
+            "basis_turn": 1
+          },
+          "pair": [
+            "akane",
+            "kurumi"
+          ],
+          "evaluation": {
+            "previous_relationship": "未形成",
+            "relationship": "未形成",
+            "contact_history": "会話経験あり",
+            "reason": "現地会話1回、前向き0回（未形成→未形成）"
+          },
+          "evaluation_reason": "現地会話1回、前向き0回（未形成→未形成）"
+        },
+        {
+          "turn": 2,
+          "actor": "akane",
+          "target": "kurumi",
+          "topic": "暮らし",
+          "approach": "よかったら、少し話しませんか？",
+          "response": "前向き",
+          "reply": "その話、もう少し聞いてみたいです。",
+          "reaction": "positive",
+          "fallback": {
+            "response": false,
+            "response_reason": null
+          },
+          "decision_affect": {
+            "actor": "akane",
+            "outgoing": [
+              {
+                "candidate": "koharu",
+                "value": 0
+              },
+              {
+                "candidate": "midori",
+                "value": 0
+              },
+              {
+                "candidate": "kurumi",
+                "value": 0
+              }
+            ]
+          },
+          "affect_transition": {
+            "turn": 2,
+            "receiver": "kurumi",
+            "initiator": "akane",
+            "reaction": "positive",
+            "delta": 1,
+            "before": 0,
+            "after": 1,
+            "direction": {
+              "receiver": "kurumi",
+              "initiator": "akane"
+            },
+            "basis_turn": 2
+          },
+          "pair": [
+            "akane",
+            "kurumi"
+          ],
+          "evaluation": {
+            "previous_relationship": "未形成",
+            "relationship": "顔見知り",
+            "contact_history": "会話経験あり",
+            "reason": "現地会話2回、前向き1回（未形成→顔見知り）"
+          },
+          "evaluation_reason": "現地会話2回、前向き1回（未形成→顔見知り）"
+        },
+        {
+          "turn": 3,
+          "actor": "midori",
+          "target": "koharu",
+          "topic": "ものづくり",
+          "approach": "もしよければ、聞かせてください。",
+          "response": "前向き",
+          "reply": "その話、もう少し聞いてみたいです。",
+          "reaction": "positive",
+          "fallback": {
+            "response": false,
+            "response_reason": null
+          },
+          "decision_affect": {
+            "actor": "midori",
+            "outgoing": [
+              {
+                "candidate": "akane",
+                "value": 0
+              },
+              {
+                "candidate": "koharu",
+                "value": 0
+              },
+              {
+                "candidate": "kurumi",
+                "value": 0
+              }
+            ]
+          },
+          "affect_transition": {
+            "turn": 3,
+            "receiver": "koharu",
+            "initiator": "midori",
+            "reaction": "positive",
+            "delta": 1,
+            "before": 0,
+            "after": 1,
+            "direction": {
+              "receiver": "koharu",
+              "initiator": "midori"
+            },
+            "basis_turn": 3
+          },
+          "pair": [
+            "koharu",
+            "midori"
+          ],
+          "evaluation": {
+            "previous_relationship": "未形成",
+            "relationship": "未形成",
+            "contact_history": "会話経験あり",
+            "reason": "現地会話1回、前向き1回（未形成→未形成）"
+          },
+          "evaluation_reason": "現地会話1回、前向き1回（未形成→未形成）"
+        },
+        {
+          "turn": 4,
+          "actor": "koharu",
+          "target": "midori",
+          "topic": "ものづくり",
+          "approach": "この話題、どう思いますか？",
+          "response": "前向き",
+          "reply": "その話、もう少し聞いてみたいです。",
+          "reaction": "positive",
+          "fallback": {
+            "response": false,
+            "response_reason": null
+          },
+          "decision_affect": {
+            "actor": "koharu",
+            "outgoing": [
+              {
+                "candidate": "akane",
+                "value": 0
+              },
+              {
+                "candidate": "midori",
+                "value": 1
+              },
+              {
+                "candidate": "kurumi",
+                "value": 0
+              }
+            ]
+          },
+          "affect_transition": {
+            "turn": 4,
+            "receiver": "midori",
+            "initiator": "koharu",
+            "reaction": "positive",
+            "delta": 1,
+            "before": 0,
+            "after": 1,
+            "direction": {
+              "receiver": "midori",
+              "initiator": "koharu"
+            },
+            "basis_turn": 4
+          },
+          "pair": [
+            "koharu",
+            "midori"
+          ],
+          "evaluation": {
+            "previous_relationship": "未形成",
+            "relationship": "顔見知り",
+            "contact_history": "会話経験あり",
+            "reason": "現地会話2回、前向き2回（未形成→顔見知り）"
+          },
+          "evaluation_reason": "現地会話2回、前向き2回（未形成→顔見知り）"
+        },
+        {
+          "turn": 5,
+          "actor": "kurumi",
+          "target": "koharu",
+          "topic": "暮らし",
+          "approach": "この話題、どう思いますか？",
+          "response": "噛み合わない",
+          "reply": "少し難しい話かもしれません。",
+          "reaction": "misaligned",
+          "fallback": {
+            "response": false,
+            "response_reason": null
+          },
+          "decision_affect": {
+            "actor": "kurumi",
+            "outgoing": [
+              {
+                "candidate": "akane",
+                "value": 1
+              },
+              {
+                "candidate": "koharu",
+                "value": 0
+              },
+              {
+                "candidate": "midori",
+                "value": 0
+              }
+            ]
+          },
+          "affect_transition": {
+            "turn": 5,
+            "receiver": "koharu",
+            "initiator": "kurumi",
+            "reaction": "misaligned",
+            "delta": -1,
+            "before": 0,
+            "after": -1,
+            "direction": {
+              "receiver": "koharu",
+              "initiator": "kurumi"
+            },
+            "basis_turn": 5
+          },
+          "pair": [
+            "koharu",
+            "kurumi"
+          ],
+          "evaluation": {
+            "previous_relationship": "未形成",
+            "relationship": "未形成",
+            "contact_history": "会話経験あり",
+            "reason": "現地会話1回、前向き0回（未形成→未形成）"
+          },
+          "evaluation_reason": "現地会話1回、前向き0回（未形成→未形成）"
+        },
+        {
+          "turn": 6,
+          "actor": "akane",
+          "target": "midori",
+          "topic": "暮らし",
+          "approach": "よかったら、少し話しませんか？",
+          "response": "ふつう",
+          "reply": "なるほど、そうなんですね。",
+          "reaction": "neutral",
+          "fallback": {
+            "response": false,
+            "response_reason": null
+          },
+          "decision_affect": {
+            "actor": "akane",
+            "outgoing": [
+              {
+                "candidate": "koharu",
+                "value": 0
+              },
+              {
+                "candidate": "midori",
+                "value": 0
+              },
+              {
+                "candidate": "kurumi",
+                "value": 0
+              }
+            ]
+          },
+          "affect_transition": {
+            "turn": 6,
+            "receiver": "midori",
+            "initiator": "akane",
+            "reaction": "neutral",
+            "delta": 0,
+            "before": 0,
+            "after": 0,
+            "direction": {
+              "receiver": "midori",
+              "initiator": "akane"
+            },
+            "basis_turn": 6
+          },
+          "pair": [
+            "akane",
+            "midori"
+          ],
+          "evaluation": {
+            "previous_relationship": "未形成",
+            "relationship": "未形成",
+            "contact_history": "会話経験あり",
+            "reason": "現地会話1回、前向き0回（未形成→未形成）"
+          },
+          "evaluation_reason": "現地会話1回、前向き0回（未形成→未形成）"
+        },
+        {
+          "turn": 7,
+          "actor": "midori",
+          "target": "koharu",
+          "topic": "ものづくり",
+          "approach": "もしよければ、聞かせてください。",
+          "response": "前向き",
+          "reply": "その話、もう少し聞いてみたいです。",
+          "reaction": "positive",
+          "fallback": {
+            "response": false,
+            "response_reason": null
+          },
+          "decision_affect": {
+            "actor": "midori",
+            "outgoing": [
+              {
+                "candidate": "akane",
+                "value": 0
+              },
+              {
+                "candidate": "koharu",
+                "value": 1
+              },
+              {
+                "candidate": "kurumi",
+                "value": 0
+              }
+            ]
+          },
+          "affect_transition": {
+            "turn": 7,
+            "receiver": "koharu",
+            "initiator": "midori",
+            "reaction": "positive",
+            "delta": 1,
+            "before": 1,
+            "after": 2,
+            "direction": {
+              "receiver": "koharu",
+              "initiator": "midori"
+            },
+            "basis_turn": 7
+          },
+          "pair": [
+            "koharu",
+            "midori"
+          ],
+          "evaluation": {
+            "previous_relationship": "顔見知り",
+            "relationship": "親しみがある",
+            "contact_history": "会話経験あり",
+            "reason": "現地会話3回、前向き3回（顔見知り→親しみがある）"
+          },
+          "evaluation_reason": "現地会話3回、前向き3回（顔見知り→親しみがある）"
+        },
+        {
+          "turn": 8,
+          "actor": "koharu",
+          "target": "kurumi",
+          "topic": "暮らし",
+          "approach": "この話題、どう思いますか？",
+          "response": "前向き",
+          "reply": "その話、もう少し聞いてみたいです。",
+          "reaction": "positive",
+          "fallback": {
+            "response": false,
+            "response_reason": null
+          },
+          "decision_affect": {
+            "actor": "koharu",
+            "outgoing": [
+              {
+                "candidate": "akane",
+                "value": 0
+              },
+              {
+                "candidate": "midori",
+                "value": 2
+              },
+              {
+                "candidate": "kurumi",
+                "value": -1
+              }
+            ]
+          },
+          "affect_transition": {
+            "turn": 8,
+            "receiver": "kurumi",
+            "initiator": "koharu",
+            "reaction": "positive",
+            "delta": 1,
+            "before": 0,
+            "after": 1,
+            "direction": {
+              "receiver": "kurumi",
+              "initiator": "koharu"
+            },
+            "basis_turn": 8
+          },
+          "pair": [
+            "koharu",
+            "kurumi"
+          ],
+          "evaluation": {
+            "previous_relationship": "未形成",
+            "relationship": "顔見知り",
+            "contact_history": "会話経験あり",
+            "reason": "現地会話2回、前向き1回（未形成→顔見知り）"
+          },
+          "evaluation_reason": "現地会話2回、前向き1回（未形成→顔見知り）"
+        }
+      ],
+      "evaluation_reasons": [
+        {
+          "turn": 1,
+          "pair": [
+            "akane",
+            "kurumi"
+          ],
+          "previous_relationship": "未形成",
+          "relationship": "未形成",
+          "contact_history": "会話経験あり",
+          "reason": "現地会話1回、前向き0回（未形成→未形成）"
+        },
+        {
+          "turn": 2,
+          "pair": [
+            "akane",
+            "kurumi"
+          ],
+          "previous_relationship": "未形成",
+          "relationship": "顔見知り",
+          "contact_history": "会話経験あり",
+          "reason": "現地会話2回、前向き1回（未形成→顔見知り）"
+        },
+        {
+          "turn": 3,
+          "pair": [
+            "koharu",
+            "midori"
+          ],
+          "previous_relationship": "未形成",
+          "relationship": "未形成",
+          "contact_history": "会話経験あり",
+          "reason": "現地会話1回、前向き1回（未形成→未形成）"
+        },
+        {
+          "turn": 4,
+          "pair": [
+            "koharu",
+            "midori"
+          ],
+          "previous_relationship": "未形成",
+          "relationship": "顔見知り",
+          "contact_history": "会話経験あり",
+          "reason": "現地会話2回、前向き2回（未形成→顔見知り）"
+        },
+        {
+          "turn": 5,
+          "pair": [
+            "koharu",
+            "kurumi"
+          ],
+          "previous_relationship": "未形成",
+          "relationship": "未形成",
+          "contact_history": "会話経験あり",
+          "reason": "現地会話1回、前向き0回（未形成→未形成）"
+        },
+        {
+          "turn": 6,
+          "pair": [
+            "akane",
+            "midori"
+          ],
+          "previous_relationship": "未形成",
+          "relationship": "未形成",
+          "contact_history": "会話経験あり",
+          "reason": "現地会話1回、前向き0回（未形成→未形成）"
+        },
+        {
+          "turn": 7,
+          "pair": [
+            "koharu",
+            "midori"
+          ],
+          "previous_relationship": "顔見知り",
+          "relationship": "親しみがある",
+          "contact_history": "会話経験あり",
+          "reason": "現地会話3回、前向き3回（顔見知り→親しみがある）"
+        },
+        {
+          "turn": 8,
+          "pair": [
+            "koharu",
+            "kurumi"
+          ],
+          "previous_relationship": "未形成",
+          "relationship": "顔見知り",
+          "contact_history": "会話経験あり",
+          "reason": "現地会話2回、前向き1回（未形成→顔見知り）"
+        }
+      ],
+      "snapshots": [
+        {
+          "turn": 0,
+          "phase": "start",
+          "pairs": [
+            {
+              "left_id": "akane",
+              "right_id": "koharu",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "kurumi",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            }
+          ]
+        },
+        {
+          "turn": 1,
+          "phase": "turn_end",
+          "pairs": [
+            {
+              "left_id": "akane",
+              "right_id": "koharu",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "未形成",
+              "conversation_count": 1,
+              "positive_count": 0,
+              "actor_ids": [
+                "kurumi"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "kurumi",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "phase": "turn_end",
+          "pairs": [
+            {
+              "left_id": "akane",
+              "right_id": "koharu",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "kurumi",
+                "akane"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "kurumi",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            }
+          ]
+        },
+        {
+          "turn": 3,
+          "phase": "turn_end",
+          "pairs": [
+            {
+              "left_id": "akane",
+              "right_id": "koharu",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "kurumi",
+                "akane"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "未形成",
+              "conversation_count": 1,
+              "positive_count": 1,
+              "actor_ids": [
+                "midori"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "kurumi",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            }
+          ]
+        },
+        {
+          "turn": 4,
+          "phase": "turn_end",
+          "pairs": [
+            {
+              "left_id": "akane",
+              "right_id": "koharu",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "kurumi",
+                "akane"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 2,
+              "actor_ids": [
+                "midori",
+                "koharu"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "kurumi",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            }
+          ]
+        },
+        {
+          "turn": 5,
+          "phase": "turn_end",
+          "pairs": [
+            {
+              "left_id": "akane",
+              "right_id": "koharu",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "kurumi",
+                "akane"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 2,
+              "actor_ids": [
+                "midori",
+                "koharu"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "未形成",
+              "conversation_count": 1,
+              "positive_count": 0,
+              "actor_ids": [
+                "kurumi"
+              ]
+            },
+            {
+              "left_id": "kurumi",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            }
+          ]
+        },
+        {
+          "turn": 6,
+          "phase": "turn_end",
+          "pairs": [
+            {
+              "left_id": "akane",
+              "right_id": "koharu",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "未形成",
+              "conversation_count": 1,
+              "positive_count": 0,
+              "actor_ids": [
+                "akane"
+              ]
+            },
+            {
+              "left_id": "akane",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "kurumi",
+                "akane"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 2,
+              "actor_ids": [
+                "midori",
+                "koharu"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "未形成",
+              "conversation_count": 1,
+              "positive_count": 0,
+              "actor_ids": [
+                "kurumi"
+              ]
+            },
+            {
+              "left_id": "kurumi",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            }
+          ]
+        },
+        {
+          "turn": 7,
+          "phase": "turn_end",
+          "pairs": [
+            {
+              "left_id": "akane",
+              "right_id": "koharu",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "未形成",
+              "conversation_count": 1,
+              "positive_count": 0,
+              "actor_ids": [
+                "akane"
+              ]
+            },
+            {
+              "left_id": "akane",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "kurumi",
+                "akane"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "親しみがある",
+              "conversation_count": 3,
+              "positive_count": 3,
+              "actor_ids": [
+                "midori",
+                "koharu"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "未形成",
+              "conversation_count": 1,
+              "positive_count": 0,
+              "actor_ids": [
+                "kurumi"
+              ]
+            },
+            {
+              "left_id": "kurumi",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            }
+          ]
+        },
+        {
+          "turn": 8,
+          "phase": "turn_end",
+          "pairs": [
+            {
+              "left_id": "akane",
+              "right_id": "koharu",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "未形成",
+              "conversation_count": 1,
+              "positive_count": 0,
+              "actor_ids": [
+                "akane"
+              ]
+            },
+            {
+              "left_id": "akane",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "kurumi",
+                "akane"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "親しみがある",
+              "conversation_count": 3,
+              "positive_count": 3,
+              "actor_ids": [
+                "midori",
+                "koharu"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "kurumi",
+                "koharu"
+              ]
+            },
+            {
+              "left_id": "kurumi",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            }
+          ]
+        },
+        {
+          "turn": 8,
+          "phase": "end",
+          "pairs": [
+            {
+              "left_id": "akane",
+              "right_id": "koharu",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "未形成",
+              "conversation_count": 1,
+              "positive_count": 0,
+              "actor_ids": [
+                "akane"
+              ]
+            },
+            {
+              "left_id": "akane",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "kurumi",
+                "akane"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "親しみがある",
+              "conversation_count": 3,
+              "positive_count": 3,
+              "actor_ids": [
+                "midori",
+                "koharu"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "kurumi",
+                "koharu"
+              ]
+            },
+            {
+              "left_id": "kurumi",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            }
+          ]
+        }
+      ],
+      "initial_relationships": [
+        {
+          "left_id": "akane",
+          "right_id": "koharu",
+          "online_known": "なし",
+          "contact_history": "未接触",
+          "onsite_relationship": "未形成",
+          "conversation_count": 0,
+          "positive_count": 0,
+          "actor_ids": []
+        },
+        {
+          "left_id": "akane",
+          "right_id": "midori",
+          "online_known": "なし",
+          "contact_history": "未接触",
+          "onsite_relationship": "未形成",
+          "conversation_count": 0,
+          "positive_count": 0,
+          "actor_ids": []
+        },
+        {
+          "left_id": "akane",
+          "right_id": "kurumi",
+          "online_known": "なし",
+          "contact_history": "未接触",
+          "onsite_relationship": "未形成",
+          "conversation_count": 0,
+          "positive_count": 0,
+          "actor_ids": []
+        },
+        {
+          "left_id": "koharu",
+          "right_id": "midori",
+          "online_known": "なし",
+          "contact_history": "未接触",
+          "onsite_relationship": "未形成",
+          "conversation_count": 0,
+          "positive_count": 0,
+          "actor_ids": []
+        },
+        {
+          "left_id": "koharu",
+          "right_id": "kurumi",
+          "online_known": "なし",
+          "contact_history": "未接触",
+          "onsite_relationship": "未形成",
+          "conversation_count": 0,
+          "positive_count": 0,
+          "actor_ids": []
+        },
+        {
+          "left_id": "kurumi",
+          "right_id": "midori",
+          "online_known": "なし",
+          "contact_history": "未接触",
+          "onsite_relationship": "未形成",
+          "conversation_count": 0,
+          "positive_count": 0,
+          "actor_ids": []
+        }
+      ],
+      "final_relationships": [
+        {
+          "left_id": "akane",
+          "right_id": "koharu",
+          "online_known": "なし",
+          "contact_history": "未接触",
+          "onsite_relationship": "未形成",
+          "conversation_count": 0,
+          "positive_count": 0,
+          "actor_ids": []
+        },
+        {
+          "left_id": "akane",
+          "right_id": "midori",
+          "online_known": "なし",
+          "contact_history": "会話経験あり",
+          "onsite_relationship": "未形成",
+          "conversation_count": 1,
+          "positive_count": 0,
+          "actor_ids": [
+            "akane"
+          ]
+        },
+        {
+          "left_id": "akane",
+          "right_id": "kurumi",
+          "online_known": "なし",
+          "contact_history": "会話経験あり",
+          "onsite_relationship": "顔見知り",
+          "conversation_count": 2,
+          "positive_count": 1,
+          "actor_ids": [
+            "kurumi",
+            "akane"
+          ]
+        },
+        {
+          "left_id": "koharu",
+          "right_id": "midori",
+          "online_known": "なし",
+          "contact_history": "会話経験あり",
+          "onsite_relationship": "親しみがある",
+          "conversation_count": 3,
+          "positive_count": 3,
+          "actor_ids": [
+            "midori",
+            "koharu"
+          ]
+        },
+        {
+          "left_id": "koharu",
+          "right_id": "kurumi",
+          "online_known": "なし",
+          "contact_history": "会話経験あり",
+          "onsite_relationship": "顔見知り",
+          "conversation_count": 2,
+          "positive_count": 1,
+          "actor_ids": [
+            "kurumi",
+            "koharu"
+          ]
+        },
+        {
+          "left_id": "kurumi",
+          "right_id": "midori",
+          "online_known": "なし",
+          "contact_history": "未接触",
+          "onsite_relationship": "未形成",
+          "conversation_count": 0,
+          "positive_count": 0,
+          "actor_ids": []
+        }
+      ],
+      "initial_affect_state": {
+        "participants": [
+          "akane",
+          "koharu",
+          "midori",
+          "kurumi"
+        ],
+        "values": [
+          {
+            "owner": "akane",
+            "other": "koharu",
+            "value": 0
+          },
+          {
+            "owner": "akane",
+            "other": "midori",
+            "value": 0
+          },
+          {
+            "owner": "akane",
+            "other": "kurumi",
+            "value": 0
+          },
+          {
+            "owner": "koharu",
+            "other": "akane",
+            "value": 0
+          },
+          {
+            "owner": "koharu",
+            "other": "midori",
+            "value": 0
+          },
+          {
+            "owner": "koharu",
+            "other": "kurumi",
+            "value": 0
+          },
+          {
+            "owner": "midori",
+            "other": "akane",
+            "value": 0
+          },
+          {
+            "owner": "midori",
+            "other": "koharu",
+            "value": 0
+          },
+          {
+            "owner": "midori",
+            "other": "kurumi",
+            "value": 0
+          },
+          {
+            "owner": "kurumi",
+            "other": "akane",
+            "value": 0
+          },
+          {
+            "owner": "kurumi",
+            "other": "koharu",
+            "value": 0
+          },
+          {
+            "owner": "kurumi",
+            "other": "midori",
+            "value": 0
+          }
+        ]
+      },
+      "final_affect_state": {
+        "participants": [
+          "akane",
+          "koharu",
+          "midori",
+          "kurumi"
+        ],
+        "values": [
+          {
+            "owner": "akane",
+            "other": "koharu",
+            "value": 0
+          },
+          {
+            "owner": "akane",
+            "other": "midori",
+            "value": 0
+          },
+          {
+            "owner": "akane",
+            "other": "kurumi",
+            "value": 0
+          },
+          {
+            "owner": "koharu",
+            "other": "akane",
+            "value": 0
+          },
+          {
+            "owner": "koharu",
+            "other": "midori",
+            "value": 2
+          },
+          {
+            "owner": "koharu",
+            "other": "kurumi",
+            "value": -1
+          },
+          {
+            "owner": "midori",
+            "other": "akane",
+            "value": 0
+          },
+          {
+            "owner": "midori",
+            "other": "koharu",
+            "value": 1
+          },
+          {
+            "owner": "midori",
+            "other": "kurumi",
+            "value": 0
+          },
+          {
+            "owner": "kurumi",
+            "other": "akane",
+            "value": 1
+          },
+          {
+            "owner": "kurumi",
+            "other": "koharu",
+            "value": 1
+          },
+          {
+            "owner": "kurumi",
+            "other": "midori",
+            "value": 0
+          }
+        ]
+      },
+      "affect_transitions": [
+        {
+          "turn": 1,
+          "receiver": "akane",
+          "initiator": "kurumi",
+          "reaction": "neutral",
+          "delta": 0,
+          "before": 0,
+          "after": 0,
+          "direction": {
+            "receiver": "akane",
+            "initiator": "kurumi"
+          },
+          "basis_turn": 1
+        },
+        {
+          "turn": 2,
+          "receiver": "kurumi",
+          "initiator": "akane",
+          "reaction": "positive",
+          "delta": 1,
+          "before": 0,
+          "after": 1,
+          "direction": {
+            "receiver": "kurumi",
+            "initiator": "akane"
+          },
+          "basis_turn": 2
+        },
+        {
+          "turn": 3,
+          "receiver": "koharu",
+          "initiator": "midori",
+          "reaction": "positive",
+          "delta": 1,
+          "before": 0,
+          "after": 1,
+          "direction": {
+            "receiver": "koharu",
+            "initiator": "midori"
+          },
+          "basis_turn": 3
+        },
+        {
+          "turn": 4,
+          "receiver": "midori",
+          "initiator": "koharu",
+          "reaction": "positive",
+          "delta": 1,
+          "before": 0,
+          "after": 1,
+          "direction": {
+            "receiver": "midori",
+            "initiator": "koharu"
+          },
+          "basis_turn": 4
+        },
+        {
+          "turn": 5,
+          "receiver": "koharu",
+          "initiator": "kurumi",
+          "reaction": "misaligned",
+          "delta": -1,
+          "before": 0,
+          "after": -1,
+          "direction": {
+            "receiver": "koharu",
+            "initiator": "kurumi"
+          },
+          "basis_turn": 5
+        },
+        {
+          "turn": 6,
+          "receiver": "midori",
+          "initiator": "akane",
+          "reaction": "neutral",
+          "delta": 0,
+          "before": 0,
+          "after": 0,
+          "direction": {
+            "receiver": "midori",
+            "initiator": "akane"
+          },
+          "basis_turn": 6
+        },
+        {
+          "turn": 7,
+          "receiver": "koharu",
+          "initiator": "midori",
+          "reaction": "positive",
+          "delta": 1,
+          "before": 1,
+          "after": 2,
+          "direction": {
+            "receiver": "koharu",
+            "initiator": "midori"
+          },
+          "basis_turn": 7
+        },
+        {
+          "turn": 8,
+          "receiver": "kurumi",
+          "initiator": "koharu",
+          "reaction": "positive",
+          "delta": 1,
+          "before": 0,
+          "after": 1,
+          "direction": {
+            "receiver": "kurumi",
+            "initiator": "koharu"
+          },
+          "basis_turn": 8
+        }
+      ],
+      "metrics": {
+        "new_acquaintance_count": 3,
+        "new_acquaintance_eligible_count": 6,
+        "new_acquaintance_rate": 0.5,
+        "new_familiar_count": 1,
+        "known_pair_onsite": null,
+        "isolated_participants": [],
+        "third_party_observation_paths": null
+      }
+    },
+    "B": {
+      "schema_version": "ab_poc.run.v2",
+      "config_version": "ab_poc_v1",
+      "root_seed": 1,
+      "condition": {
+        "id": "B",
+        "label": "B：あかね・みどりだけ直接既知",
+        "online_known_pairs": [
+          [
+            "akane",
+            "midori"
+          ]
+        ],
+        "online_experience": {
+          "id": "akane_midori_technology_exchange",
+          "version": "m10.3.online_experience.v1",
+          "kind": "direct_exchange",
+          "participants": [
+            "akane",
+            "midori"
+          ],
+          "topic": "技術",
+          "exchange_count": 1,
+          "memory_summary": "技術について1往復した"
+        }
+      },
+      "scenario": {
+        "version": "m10.3.scenario.v1",
+        "online_experience": {
+          "id": "akane_midori_technology_exchange",
+          "version": "m10.3.online_experience.v1",
+          "kind": "direct_exchange",
+          "participants": [
+            "akane",
+            "midori"
+          ],
+          "topic": "技術",
+          "exchange_count": 1,
+          "memory_summary": "技術について1往復した"
+        }
+      },
+      "condition_id": "B",
+      "participants": [
+        {
+          "id": "akane",
+          "name": "あかね",
+          "interests": [
+            "地域",
+            "暮らし"
+          ],
+          "stance": "積極的"
+        },
+        {
+          "id": "koharu",
+          "name": "こはる",
+          "interests": [
+            "展示",
+            "デザイン",
+            "ものづくり"
+          ],
+          "stance": "ふつう"
+        },
+        {
+          "id": "midori",
+          "name": "みどり",
+          "interests": [
+            "ものづくり",
+            "技術"
+          ],
+          "stance": "慎重"
+        },
+        {
+          "id": "kurumi",
+          "name": "くるみ",
+          "interests": [
+            "食",
+            "散歩",
+            "暮らし"
+          ],
+          "stance": "ふつう"
+        }
+      ],
+      "rules": {
+        "turns": 8,
+        "common_topic": "この場所でやってみたいこと",
+        "selection": {
+          "base": 1.0,
+          "online_known_bonus": 1.0,
+          "shared_interest_bonus": 1.0,
+          "prior_positive_bonus": 0.5,
+          "repeated_target_multiplier": 0.5
+        },
+        "reaction": {
+          "base": 1,
+          "online_known_bonus": 2,
+          "topic_match_bonus": 2,
+          "prior_positive_bonus": 1,
+          "proactive_actor_bonus": 1,
+          "cautious_actor_penalty": -1,
+          "cautious_target_penalty": -1,
+          "jitter_values": [
+            -1,
+            0,
+            1
+          ],
+          "positive_threshold": 3,
+          "neutral_threshold": 1
+        },
+        "relationship": {
+          "acquaintance_conversations": 2,
+          "acquaintance_positive": 1,
+          "familiar_conversations": 3,
+          "familiar_positive": 2,
+          "familiar_requires_bidirectional": true
+        }
+      },
+      "participant_provider": {
+        "name": "rule-participant",
+        "version": "ab_poc_rules_v1"
+      },
+      "relationship_evaluator": {
+        "name": "rule-relationship",
+        "version": "ab_poc_rules_v1"
+      },
+      "actor_order": [
+        "kurumi",
+        "akane",
+        "midori",
+        "koharu"
+      ],
+      "turn_order": [
+        "kurumi",
+        "akane",
+        "midori",
+        "koharu",
+        "kurumi",
+        "akane",
+        "midori",
+        "koharu"
+      ],
+      "turns": [
+        {
+          "turn": 1,
+          "actor": "kurumi",
+          "target": "akane",
+          "topic": "暮らし",
+          "approach": "この話題、どう思いますか？",
+          "response": "ふつう",
+          "reply": "なるほど、そうなんですね。",
+          "reaction": "neutral",
+          "fallback": {
+            "response": false,
+            "response_reason": null
+          },
+          "decision_affect": {
+            "actor": "kurumi",
+            "outgoing": [
+              {
+                "candidate": "akane",
+                "value": 0
+              },
+              {
+                "candidate": "koharu",
+                "value": 0
+              },
+              {
+                "candidate": "midori",
+                "value": 0
+              }
+            ]
+          },
+          "affect_transition": {
+            "turn": 1,
+            "receiver": "akane",
+            "initiator": "kurumi",
+            "reaction": "neutral",
+            "delta": 0,
+            "before": 0,
+            "after": 0,
+            "direction": {
+              "receiver": "akane",
+              "initiator": "kurumi"
+            },
+            "basis_turn": 1
+          },
+          "pair": [
+            "akane",
+            "kurumi"
+          ],
+          "evaluation": {
+            "previous_relationship": "未形成",
+            "relationship": "未形成",
+            "contact_history": "会話経験あり",
+            "reason": "現地会話1回、前向き0回（未形成→未形成）"
+          },
+          "evaluation_reason": "現地会話1回、前向き0回（未形成→未形成）"
+        },
+        {
+          "turn": 2,
+          "actor": "akane",
+          "target": "kurumi",
+          "topic": "暮らし",
+          "approach": "よかったら、少し話しませんか？",
+          "response": "前向き",
+          "reply": "その話、もう少し聞いてみたいです。",
+          "reaction": "positive",
+          "fallback": {
+            "response": false,
+            "response_reason": null
+          },
+          "decision_affect": {
+            "actor": "akane",
+            "outgoing": [
+              {
+                "candidate": "koharu",
+                "value": 0
+              },
+              {
+                "candidate": "midori",
+                "value": 0
+              },
+              {
+                "candidate": "kurumi",
+                "value": 0
+              }
+            ]
+          },
+          "affect_transition": {
+            "turn": 2,
+            "receiver": "kurumi",
+            "initiator": "akane",
+            "reaction": "positive",
+            "delta": 1,
+            "before": 0,
+            "after": 1,
+            "direction": {
+              "receiver": "kurumi",
+              "initiator": "akane"
+            },
+            "basis_turn": 2
+          },
+          "pair": [
+            "akane",
+            "kurumi"
+          ],
+          "evaluation": {
+            "previous_relationship": "未形成",
+            "relationship": "顔見知り",
+            "contact_history": "会話経験あり",
+            "reason": "現地会話2回、前向き1回（未形成→顔見知り）"
+          },
+          "evaluation_reason": "現地会話2回、前向き1回（未形成→顔見知り）"
+        },
+        {
+          "turn": 3,
+          "actor": "midori",
+          "target": "akane",
+          "topic": "技術",
+          "approach": "もしよければ、聞かせてください。",
+          "response": "ふつう",
+          "reply": "なるほど、そうなんですね。",
+          "reaction": "neutral",
+          "fallback": {
+            "response": false,
+            "response_reason": null
+          },
+          "decision_affect": {
+            "actor": "midori",
+            "outgoing": [
+              {
+                "candidate": "akane",
+                "value": 0
+              },
+              {
+                "candidate": "koharu",
+                "value": 0
+              },
+              {
+                "candidate": "kurumi",
+                "value": 0
+              }
+            ]
+          },
+          "affect_transition": {
+            "turn": 3,
+            "receiver": "akane",
+            "initiator": "midori",
+            "reaction": "neutral",
+            "delta": 0,
+            "before": 0,
+            "after": 0,
+            "direction": {
+              "receiver": "akane",
+              "initiator": "midori"
+            },
+            "basis_turn": 3
+          },
+          "pair": [
+            "akane",
+            "midori"
+          ],
+          "evaluation": {
+            "previous_relationship": "未形成",
+            "relationship": "未形成",
+            "contact_history": "会話経験あり",
+            "reason": "現地会話1回、前向き0回（未形成→未形成）"
+          },
+          "evaluation_reason": "現地会話1回、前向き0回（未形成→未形成）"
+        },
+        {
+          "turn": 4,
+          "actor": "koharu",
+          "target": "midori",
+          "topic": "ものづくり",
+          "approach": "この話題、どう思いますか？",
+          "response": "ふつう",
+          "reply": "なるほど、そうなんですね。",
+          "reaction": "neutral",
+          "fallback": {
+            "response": false,
+            "response_reason": null
+          },
+          "decision_affect": {
+            "actor": "koharu",
+            "outgoing": [
+              {
+                "candidate": "akane",
+                "value": 0
+              },
+              {
+                "candidate": "midori",
+                "value": 0
+              },
+              {
+                "candidate": "kurumi",
+                "value": 0
+              }
+            ]
+          },
+          "affect_transition": {
+            "turn": 4,
+            "receiver": "midori",
+            "initiator": "koharu",
+            "reaction": "neutral",
+            "delta": 0,
+            "before": 0,
+            "after": 0,
+            "direction": {
+              "receiver": "midori",
+              "initiator": "koharu"
+            },
+            "basis_turn": 4
+          },
+          "pair": [
+            "koharu",
+            "midori"
+          ],
+          "evaluation": {
+            "previous_relationship": "未形成",
+            "relationship": "未形成",
+            "contact_history": "会話経験あり",
+            "reason": "現地会話1回、前向き0回（未形成→未形成）"
+          },
+          "evaluation_reason": "現地会話1回、前向き0回（未形成→未形成）"
+        },
+        {
+          "turn": 5,
+          "actor": "kurumi",
+          "target": "koharu",
+          "topic": "暮らし",
+          "approach": "この話題、どう思いますか？",
+          "response": "噛み合わない",
+          "reply": "少し難しい話かもしれません。",
+          "reaction": "misaligned",
+          "fallback": {
+            "response": false,
+            "response_reason": null
+          },
+          "decision_affect": {
+            "actor": "kurumi",
+            "outgoing": [
+              {
+                "candidate": "akane",
+                "value": 1
+              },
+              {
+                "candidate": "koharu",
+                "value": 0
+              },
+              {
+                "candidate": "midori",
+                "value": 0
+              }
+            ]
+          },
+          "affect_transition": {
+            "turn": 5,
+            "receiver": "koharu",
+            "initiator": "kurumi",
+            "reaction": "misaligned",
+            "delta": -1,
+            "before": 0,
+            "after": -1,
+            "direction": {
+              "receiver": "koharu",
+              "initiator": "kurumi"
+            },
+            "basis_turn": 5
+          },
+          "pair": [
+            "koharu",
+            "kurumi"
+          ],
+          "evaluation": {
+            "previous_relationship": "未形成",
+            "relationship": "未形成",
+            "contact_history": "会話経験あり",
+            "reason": "現地会話1回、前向き0回（未形成→未形成）"
+          },
+          "evaluation_reason": "現地会話1回、前向き0回（未形成→未形成）"
+        },
+        {
+          "turn": 6,
+          "actor": "akane",
+          "target": "midori",
+          "topic": "技術",
+          "approach": "よかったら、少し話しませんか？",
+          "response": "前向き",
+          "reply": "その話、もう少し聞いてみたいです。",
+          "reaction": "positive",
+          "fallback": {
+            "response": false,
+            "response_reason": null
+          },
+          "decision_affect": {
+            "actor": "akane",
+            "outgoing": [
+              {
+                "candidate": "koharu",
+                "value": 0
+              },
+              {
+                "candidate": "midori",
+                "value": 0
+              },
+              {
+                "candidate": "kurumi",
+                "value": 0
+              }
+            ]
+          },
+          "affect_transition": {
+            "turn": 6,
+            "receiver": "midori",
+            "initiator": "akane",
+            "reaction": "positive",
+            "delta": 1,
+            "before": 0,
+            "after": 1,
+            "direction": {
+              "receiver": "midori",
+              "initiator": "akane"
+            },
+            "basis_turn": 6
+          },
+          "pair": [
+            "akane",
+            "midori"
+          ],
+          "evaluation": {
+            "previous_relationship": "未形成",
+            "relationship": "顔見知り",
+            "contact_history": "会話経験あり",
+            "reason": "現地会話2回、前向き1回（未形成→顔見知り）"
+          },
+          "evaluation_reason": "現地会話2回、前向き1回（未形成→顔見知り）"
+        },
+        {
+          "turn": 7,
+          "actor": "midori",
+          "target": "koharu",
+          "topic": "ものづくり",
+          "approach": "もしよければ、聞かせてください。",
+          "response": "前向き",
+          "reply": "その話、もう少し聞いてみたいです。",
+          "reaction": "positive",
+          "fallback": {
+            "response": false,
+            "response_reason": null
+          },
+          "decision_affect": {
+            "actor": "midori",
+            "outgoing": [
+              {
+                "candidate": "akane",
+                "value": 1
+              },
+              {
+                "candidate": "koharu",
+                "value": 0
+              },
+              {
+                "candidate": "kurumi",
+                "value": 0
+              }
+            ]
+          },
+          "affect_transition": {
+            "turn": 7,
+            "receiver": "koharu",
+            "initiator": "midori",
+            "reaction": "positive",
+            "delta": 1,
+            "before": 0,
+            "after": 1,
+            "direction": {
+              "receiver": "koharu",
+              "initiator": "midori"
+            },
+            "basis_turn": 7
+          },
+          "pair": [
+            "koharu",
+            "midori"
+          ],
+          "evaluation": {
+            "previous_relationship": "未形成",
+            "relationship": "顔見知り",
+            "contact_history": "会話経験あり",
+            "reason": "現地会話2回、前向き1回（未形成→顔見知り）"
+          },
+          "evaluation_reason": "現地会話2回、前向き1回（未形成→顔見知り）"
+        },
+        {
+          "turn": 8,
+          "actor": "koharu",
+          "target": "kurumi",
+          "topic": "暮らし",
+          "approach": "この話題、どう思いますか？",
+          "response": "前向き",
+          "reply": "その話、もう少し聞いてみたいです。",
+          "reaction": "positive",
+          "fallback": {
+            "response": false,
+            "response_reason": null
+          },
+          "decision_affect": {
+            "actor": "koharu",
+            "outgoing": [
+              {
+                "candidate": "akane",
+                "value": 0
+              },
+              {
+                "candidate": "midori",
+                "value": 1
+              },
+              {
+                "candidate": "kurumi",
+                "value": -1
+              }
+            ]
+          },
+          "affect_transition": {
+            "turn": 8,
+            "receiver": "kurumi",
+            "initiator": "koharu",
+            "reaction": "positive",
+            "delta": 1,
+            "before": 0,
+            "after": 1,
+            "direction": {
+              "receiver": "kurumi",
+              "initiator": "koharu"
+            },
+            "basis_turn": 8
+          },
+          "pair": [
+            "koharu",
+            "kurumi"
+          ],
+          "evaluation": {
+            "previous_relationship": "未形成",
+            "relationship": "顔見知り",
+            "contact_history": "会話経験あり",
+            "reason": "現地会話2回、前向き1回（未形成→顔見知り）"
+          },
+          "evaluation_reason": "現地会話2回、前向き1回（未形成→顔見知り）"
+        }
+      ],
+      "evaluation_reasons": [
+        {
+          "turn": 1,
+          "pair": [
+            "akane",
+            "kurumi"
+          ],
+          "previous_relationship": "未形成",
+          "relationship": "未形成",
+          "contact_history": "会話経験あり",
+          "reason": "現地会話1回、前向き0回（未形成→未形成）"
+        },
+        {
+          "turn": 2,
+          "pair": [
+            "akane",
+            "kurumi"
+          ],
+          "previous_relationship": "未形成",
+          "relationship": "顔見知り",
+          "contact_history": "会話経験あり",
+          "reason": "現地会話2回、前向き1回（未形成→顔見知り）"
+        },
+        {
+          "turn": 3,
+          "pair": [
+            "akane",
+            "midori"
+          ],
+          "previous_relationship": "未形成",
+          "relationship": "未形成",
+          "contact_history": "会話経験あり",
+          "reason": "現地会話1回、前向き0回（未形成→未形成）"
+        },
+        {
+          "turn": 4,
+          "pair": [
+            "koharu",
+            "midori"
+          ],
+          "previous_relationship": "未形成",
+          "relationship": "未形成",
+          "contact_history": "会話経験あり",
+          "reason": "現地会話1回、前向き0回（未形成→未形成）"
+        },
+        {
+          "turn": 5,
+          "pair": [
+            "koharu",
+            "kurumi"
+          ],
+          "previous_relationship": "未形成",
+          "relationship": "未形成",
+          "contact_history": "会話経験あり",
+          "reason": "現地会話1回、前向き0回（未形成→未形成）"
+        },
+        {
+          "turn": 6,
+          "pair": [
+            "akane",
+            "midori"
+          ],
+          "previous_relationship": "未形成",
+          "relationship": "顔見知り",
+          "contact_history": "会話経験あり",
+          "reason": "現地会話2回、前向き1回（未形成→顔見知り）"
+        },
+        {
+          "turn": 7,
+          "pair": [
+            "koharu",
+            "midori"
+          ],
+          "previous_relationship": "未形成",
+          "relationship": "顔見知り",
+          "contact_history": "会話経験あり",
+          "reason": "現地会話2回、前向き1回（未形成→顔見知り）"
+        },
+        {
+          "turn": 8,
+          "pair": [
+            "koharu",
+            "kurumi"
+          ],
+          "previous_relationship": "未形成",
+          "relationship": "顔見知り",
+          "contact_history": "会話経験あり",
+          "reason": "現地会話2回、前向き1回（未形成→顔見知り）"
+        }
+      ],
+      "snapshots": [
+        {
+          "turn": 0,
+          "phase": "start",
+          "pairs": [
+            {
+              "left_id": "akane",
+              "right_id": "koharu",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "midori",
+              "online_known": "あり",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "kurumi",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            }
+          ]
+        },
+        {
+          "turn": 1,
+          "phase": "turn_end",
+          "pairs": [
+            {
+              "left_id": "akane",
+              "right_id": "koharu",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "midori",
+              "online_known": "あり",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "未形成",
+              "conversation_count": 1,
+              "positive_count": 0,
+              "actor_ids": [
+                "kurumi"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "kurumi",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "phase": "turn_end",
+          "pairs": [
+            {
+              "left_id": "akane",
+              "right_id": "koharu",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "midori",
+              "online_known": "あり",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "kurumi",
+                "akane"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "kurumi",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            }
+          ]
+        },
+        {
+          "turn": 3,
+          "phase": "turn_end",
+          "pairs": [
+            {
+              "left_id": "akane",
+              "right_id": "koharu",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "midori",
+              "online_known": "あり",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "未形成",
+              "conversation_count": 1,
+              "positive_count": 0,
+              "actor_ids": [
+                "midori"
+              ]
+            },
+            {
+              "left_id": "akane",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "kurumi",
+                "akane"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "kurumi",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            }
+          ]
+        },
+        {
+          "turn": 4,
+          "phase": "turn_end",
+          "pairs": [
+            {
+              "left_id": "akane",
+              "right_id": "koharu",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "midori",
+              "online_known": "あり",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "未形成",
+              "conversation_count": 1,
+              "positive_count": 0,
+              "actor_ids": [
+                "midori"
+              ]
+            },
+            {
+              "left_id": "akane",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "kurumi",
+                "akane"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "未形成",
+              "conversation_count": 1,
+              "positive_count": 0,
+              "actor_ids": [
+                "koharu"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "kurumi",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            }
+          ]
+        },
+        {
+          "turn": 5,
+          "phase": "turn_end",
+          "pairs": [
+            {
+              "left_id": "akane",
+              "right_id": "koharu",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "midori",
+              "online_known": "あり",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "未形成",
+              "conversation_count": 1,
+              "positive_count": 0,
+              "actor_ids": [
+                "midori"
+              ]
+            },
+            {
+              "left_id": "akane",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "kurumi",
+                "akane"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "未形成",
+              "conversation_count": 1,
+              "positive_count": 0,
+              "actor_ids": [
+                "koharu"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "未形成",
+              "conversation_count": 1,
+              "positive_count": 0,
+              "actor_ids": [
+                "kurumi"
+              ]
+            },
+            {
+              "left_id": "kurumi",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            }
+          ]
+        },
+        {
+          "turn": 6,
+          "phase": "turn_end",
+          "pairs": [
+            {
+              "left_id": "akane",
+              "right_id": "koharu",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "midori",
+              "online_known": "あり",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "midori",
+                "akane"
+              ]
+            },
+            {
+              "left_id": "akane",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "kurumi",
+                "akane"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "未形成",
+              "conversation_count": 1,
+              "positive_count": 0,
+              "actor_ids": [
+                "koharu"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "未形成",
+              "conversation_count": 1,
+              "positive_count": 0,
+              "actor_ids": [
+                "kurumi"
+              ]
+            },
+            {
+              "left_id": "kurumi",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            }
+          ]
+        },
+        {
+          "turn": 7,
+          "phase": "turn_end",
+          "pairs": [
+            {
+              "left_id": "akane",
+              "right_id": "koharu",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "midori",
+              "online_known": "あり",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "midori",
+                "akane"
+              ]
+            },
+            {
+              "left_id": "akane",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "kurumi",
+                "akane"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "koharu",
+                "midori"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "未形成",
+              "conversation_count": 1,
+              "positive_count": 0,
+              "actor_ids": [
+                "kurumi"
+              ]
+            },
+            {
+              "left_id": "kurumi",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            }
+          ]
+        },
+        {
+          "turn": 8,
+          "phase": "turn_end",
+          "pairs": [
+            {
+              "left_id": "akane",
+              "right_id": "koharu",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "midori",
+              "online_known": "あり",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "midori",
+                "akane"
+              ]
+            },
+            {
+              "left_id": "akane",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "kurumi",
+                "akane"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "koharu",
+                "midori"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "kurumi",
+                "koharu"
+              ]
+            },
+            {
+              "left_id": "kurumi",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            }
+          ]
+        },
+        {
+          "turn": 8,
+          "phase": "end",
+          "pairs": [
+            {
+              "left_id": "akane",
+              "right_id": "koharu",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            },
+            {
+              "left_id": "akane",
+              "right_id": "midori",
+              "online_known": "あり",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "midori",
+                "akane"
+              ]
+            },
+            {
+              "left_id": "akane",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "kurumi",
+                "akane"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "koharu",
+                "midori"
+              ]
+            },
+            {
+              "left_id": "koharu",
+              "right_id": "kurumi",
+              "online_known": "なし",
+              "contact_history": "会話経験あり",
+              "onsite_relationship": "顔見知り",
+              "conversation_count": 2,
+              "positive_count": 1,
+              "actor_ids": [
+                "kurumi",
+                "koharu"
+              ]
+            },
+            {
+              "left_id": "kurumi",
+              "right_id": "midori",
+              "online_known": "なし",
+              "contact_history": "未接触",
+              "onsite_relationship": "未形成",
+              "conversation_count": 0,
+              "positive_count": 0,
+              "actor_ids": []
+            }
+          ]
+        }
+      ],
+      "initial_relationships": [
+        {
+          "left_id": "akane",
+          "right_id": "koharu",
+          "online_known": "なし",
+          "contact_history": "未接触",
+          "onsite_relationship": "未形成",
+          "conversation_count": 0,
+          "positive_count": 0,
+          "actor_ids": []
+        },
+        {
+          "left_id": "akane",
+          "right_id": "midori",
+          "online_known": "あり",
+          "contact_history": "未接触",
+          "onsite_relationship": "未形成",
+          "conversation_count": 0,
+          "positive_count": 0,
+          "actor_ids": []
+        },
+        {
+          "left_id": "akane",
+          "right_id": "kurumi",
+          "online_known": "なし",
+          "contact_history": "未接触",
+          "onsite_relationship": "未形成",
+          "conversation_count": 0,
+          "positive_count": 0,
+          "actor_ids": []
+        },
+        {
+          "left_id": "koharu",
+          "right_id": "midori",
+          "online_known": "なし",
+          "contact_history": "未接触",
+          "onsite_relationship": "未形成",
+          "conversation_count": 0,
+          "positive_count": 0,
+          "actor_ids": []
+        },
+        {
+          "left_id": "koharu",
+          "right_id": "kurumi",
+          "online_known": "なし",
+          "contact_history": "未接触",
+          "onsite_relationship": "未形成",
+          "conversation_count": 0,
+          "positive_count": 0,
+          "actor_ids": []
+        },
+        {
+          "left_id": "kurumi",
+          "right_id": "midori",
+          "online_known": "なし",
+          "contact_history": "未接触",
+          "onsite_relationship": "未形成",
+          "conversation_count": 0,
+          "positive_count": 0,
+          "actor_ids": []
+        }
+      ],
+      "final_relationships": [
+        {
+          "left_id": "akane",
+          "right_id": "koharu",
+          "online_known": "なし",
+          "contact_history": "未接触",
+          "onsite_relationship": "未形成",
+          "conversation_count": 0,
+          "positive_count": 0,
+          "actor_ids": []
+        },
+        {
+          "left_id": "akane",
+          "right_id": "midori",
+          "online_known": "あり",
+          "contact_history": "会話経験あり",
+          "onsite_relationship": "顔見知り",
+          "conversation_count": 2,
+          "positive_count": 1,
+          "actor_ids": [
+            "midori",
+            "akane"
+          ]
+        },
+        {
+          "left_id": "akane",
+          "right_id": "kurumi",
+          "online_known": "なし",
+          "contact_history": "会話経験あり",
+          "onsite_relationship": "顔見知り",
+          "conversation_count": 2,
+          "positive_count": 1,
+          "actor_ids": [
+            "kurumi",
+            "akane"
+          ]
+        },
+        {
+          "left_id": "koharu",
+          "right_id": "midori",
+          "online_known": "なし",
+          "contact_history": "会話経験あり",
+          "onsite_relationship": "顔見知り",
+          "conversation_count": 2,
+          "positive_count": 1,
+          "actor_ids": [
+            "koharu",
+            "midori"
+          ]
+        },
+        {
+          "left_id": "koharu",
+          "right_id": "kurumi",
+          "online_known": "なし",
+          "contact_history": "会話経験あり",
+          "onsite_relationship": "顔見知り",
+          "conversation_count": 2,
+          "positive_count": 1,
+          "actor_ids": [
+            "kurumi",
+            "koharu"
+          ]
+        },
+        {
+          "left_id": "kurumi",
+          "right_id": "midori",
+          "online_known": "なし",
+          "contact_history": "未接触",
+          "onsite_relationship": "未形成",
+          "conversation_count": 0,
+          "positive_count": 0,
+          "actor_ids": []
+        }
+      ],
+      "initial_affect_state": {
+        "participants": [
+          "akane",
+          "koharu",
+          "midori",
+          "kurumi"
+        ],
+        "values": [
+          {
+            "owner": "akane",
+            "other": "koharu",
+            "value": 0
+          },
+          {
+            "owner": "akane",
+            "other": "midori",
+            "value": 0
+          },
+          {
+            "owner": "akane",
+            "other": "kurumi",
+            "value": 0
+          },
+          {
+            "owner": "koharu",
+            "other": "akane",
+            "value": 0
+          },
+          {
+            "owner": "koharu",
+            "other": "midori",
+            "value": 0
+          },
+          {
+            "owner": "koharu",
+            "other": "kurumi",
+            "value": 0
+          },
+          {
+            "owner": "midori",
+            "other": "akane",
+            "value": 0
+          },
+          {
+            "owner": "midori",
+            "other": "koharu",
+            "value": 0
+          },
+          {
+            "owner": "midori",
+            "other": "kurumi",
+            "value": 0
+          },
+          {
+            "owner": "kurumi",
+            "other": "akane",
+            "value": 0
+          },
+          {
+            "owner": "kurumi",
+            "other": "koharu",
+            "value": 0
+          },
+          {
+            "owner": "kurumi",
+            "other": "midori",
+            "value": 0
+          }
+        ]
+      },
+      "final_affect_state": {
+        "participants": [
+          "akane",
+          "koharu",
+          "midori",
+          "kurumi"
+        ],
+        "values": [
+          {
+            "owner": "akane",
+            "other": "koharu",
+            "value": 0
+          },
+          {
+            "owner": "akane",
+            "other": "midori",
+            "value": 0
+          },
+          {
+            "owner": "akane",
+            "other": "kurumi",
+            "value": 0
+          },
+          {
+            "owner": "koharu",
+            "other": "akane",
+            "value": 0
+          },
+          {
+            "owner": "koharu",
+            "other": "midori",
+            "value": 1
+          },
+          {
+            "owner": "koharu",
+            "other": "kurumi",
+            "value": -1
+          },
+          {
+            "owner": "midori",
+            "other": "akane",
+            "value": 1
+          },
+          {
+            "owner": "midori",
+            "other": "koharu",
+            "value": 0
+          },
+          {
+            "owner": "midori",
+            "other": "kurumi",
+            "value": 0
+          },
+          {
+            "owner": "kurumi",
+            "other": "akane",
+            "value": 1
+          },
+          {
+            "owner": "kurumi",
+            "other": "koharu",
+            "value": 1
+          },
+          {
+            "owner": "kurumi",
+            "other": "midori",
+            "value": 0
+          }
+        ]
+      },
+      "affect_transitions": [
+        {
+          "turn": 1,
+          "receiver": "akane",
+          "initiator": "kurumi",
+          "reaction": "neutral",
+          "delta": 0,
+          "before": 0,
+          "after": 0,
+          "direction": {
+            "receiver": "akane",
+            "initiator": "kurumi"
+          },
+          "basis_turn": 1
+        },
+        {
+          "turn": 2,
+          "receiver": "kurumi",
+          "initiator": "akane",
+          "reaction": "positive",
+          "delta": 1,
+          "before": 0,
+          "after": 1,
+          "direction": {
+            "receiver": "kurumi",
+            "initiator": "akane"
+          },
+          "basis_turn": 2
+        },
+        {
+          "turn": 3,
+          "receiver": "akane",
+          "initiator": "midori",
+          "reaction": "neutral",
+          "delta": 0,
+          "before": 0,
+          "after": 0,
+          "direction": {
+            "receiver": "akane",
+            "initiator": "midori"
+          },
+          "basis_turn": 3
+        },
+        {
+          "turn": 4,
+          "receiver": "midori",
+          "initiator": "koharu",
+          "reaction": "neutral",
+          "delta": 0,
+          "before": 0,
+          "after": 0,
+          "direction": {
+            "receiver": "midori",
+            "initiator": "koharu"
+          },
+          "basis_turn": 4
+        },
+        {
+          "turn": 5,
+          "receiver": "koharu",
+          "initiator": "kurumi",
+          "reaction": "misaligned",
+          "delta": -1,
+          "before": 0,
+          "after": -1,
+          "direction": {
+            "receiver": "koharu",
+            "initiator": "kurumi"
+          },
+          "basis_turn": 5
+        },
+        {
+          "turn": 6,
+          "receiver": "midori",
+          "initiator": "akane",
+          "reaction": "positive",
+          "delta": 1,
+          "before": 0,
+          "after": 1,
+          "direction": {
+            "receiver": "midori",
+            "initiator": "akane"
+          },
+          "basis_turn": 6
+        },
+        {
+          "turn": 7,
+          "receiver": "koharu",
+          "initiator": "midori",
+          "reaction": "positive",
+          "delta": 1,
+          "before": 0,
+          "after": 1,
+          "direction": {
+            "receiver": "koharu",
+            "initiator": "midori"
+          },
+          "basis_turn": 7
+        },
+        {
+          "turn": 8,
+          "receiver": "kurumi",
+          "initiator": "koharu",
+          "reaction": "positive",
+          "delta": 1,
+          "before": 0,
+          "after": 1,
+          "direction": {
+            "receiver": "kurumi",
+            "initiator": "koharu"
+          },
+          "basis_turn": 8
+        }
+      ],
+      "metrics": {
+        "new_acquaintance_count": 3,
+        "new_acquaintance_eligible_count": 5,
+        "new_acquaintance_rate": 0.6,
+        "new_familiar_count": 0,
+        "known_pair_onsite": {
+          "pair": [
+            "akane",
+            "midori"
+          ],
+          "stage": "顔見知り"
+        },
+        "isolated_participants": [],
+        "third_party_observation_paths": [
+          {
+            "from_known_endpoint": "akane",
+            "third_party": "kurumi",
+            "pair": [
+              "akane",
+              "kurumi"
+            ],
+            "stage": "顔見知り"
+          },
+          {
+            "from_known_endpoint": "midori",
+            "third_party": "koharu",
+            "pair": [
+              "koharu",
+              "midori"
+            ],
+            "stage": "顔見知り"
+          }
+        ]
+      }
+    }
+  },
+  "metrics": {
+    "A": {
+      "new_acquaintance_count": 3,
+      "new_acquaintance_eligible_count": 6,
+      "new_acquaintance_rate": 0.5,
+      "new_familiar_count": 1,
+      "known_pair_onsite": null,
+      "isolated_participants": [],
+      "third_party_observation_paths": null
+    },
+    "B": {
+      "new_acquaintance_count": 3,
+      "new_acquaintance_eligible_count": 5,
+      "new_acquaintance_rate": 0.6,
+      "new_familiar_count": 0,
+      "known_pair_onsite": {
+        "pair": [
+          "akane",
+          "midori"
+        ],
+        "stage": "顔見知り"
+      },
+      "isolated_participants": [],
+      "third_party_observation_paths": [
+        {
+          "from_known_endpoint": "akane",
+          "third_party": "kurumi",
+          "pair": [
+            "akane",
+            "kurumi"
+          ],
+          "stage": "顔見知り"
+        },
+        {
+          "from_known_endpoint": "midori",
+          "third_party": "koharu",
+          "pair": [
+            "koharu",
+            "midori"
+          ],
+          "stage": "顔見知り"
+        }
+      ]
+    }
+  },
+  "controlled_fields": {
+    "participants": [
+      {
+        "id": "akane",
+        "name": "あかね",
+        "interests": [
+          "地域",
+          "暮らし"
+        ],
+        "stance": "積極的"
+      },
+      {
+        "id": "koharu",
+        "name": "こはる",
+        "interests": [
+          "展示",
+          "デザイン",
+          "ものづくり"
+        ],
+        "stance": "ふつう"
+      },
+      {
+        "id": "midori",
+        "name": "みどり",
+        "interests": [
+          "ものづくり",
+          "技術"
+        ],
+        "stance": "慎重"
+      },
+      {
+        "id": "kurumi",
+        "name": "くるみ",
+        "interests": [
+          "食",
+          "散歩",
+          "暮らし"
+        ],
+        "stance": "ふつう"
+      }
+    ],
+    "rules": {
+      "turns": 8,
+      "common_topic": "この場所でやってみたいこと",
+      "selection": {
+        "base": 1.0,
+        "online_known_bonus": 1.0,
+        "shared_interest_bonus": 1.0,
+        "prior_positive_bonus": 0.5,
+        "repeated_target_multiplier": 0.5
+      },
+      "reaction": {
+        "base": 1,
+        "online_known_bonus": 2,
+        "topic_match_bonus": 2,
+        "prior_positive_bonus": 1,
+        "proactive_actor_bonus": 1,
+        "cautious_actor_penalty": -1,
+        "cautious_target_penalty": -1,
+        "jitter_values": [
+          -1,
+          0,
+          1
+        ],
+        "positive_threshold": 3,
+        "neutral_threshold": 1
+      },
+      "relationship": {
+        "acquaintance_conversations": 2,
+        "acquaintance_positive": 1,
+        "familiar_conversations": 3,
+        "familiar_positive": 2,
+        "familiar_requires_bidirectional": true
+      }
+    },
+    "root_seed": 1,
+    "turn_order": [
+      "kurumi",
+      "akane",
+      "midori",
+      "koharu",
+      "kurumi",
+      "akane",
+      "midori",
+      "koharu"
+    ],
+    "participant_provider": {
+      "name": "rule-participant",
+      "version": "ab_poc_rules_v1"
+    },
+    "relationship_evaluator": {
+      "name": "rule-relationship",
+      "version": "ab_poc_rules_v1"
+    },
+    "scenario_version": "m10.3.scenario.v1"
+  },
+  "changed_field": "condition.online_experience"
+}

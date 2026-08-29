@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yoriyoi A/B LAB｜ASCII実験ビュー</title>
+    <link rel="stylesheet" href="ab-lab.css?v=m21-result-screen-1-20260829" />
+  </head>
+  <body>
+    <main class="terminal-shell">
+      <header class="masthead">
+        <div>
+          <p class="kicker">YORIYOI × AUTOMATA / A/B EXPERIMENT VIEW / M21 SESSION RESULT</p>
+          <h1>つながりの実験室</h1>
+          <p class="subtitle">オンラインの既知関係が、現地の会話とつながりにどう現れるかを読む。</p>
+        </div>
+        <div class="masthead-meta">
+          <div id="demoLabel" class="demo-label" hidden aria-live="polite">DEMO / CONDITION A / TURN 0/12</div>
+          <p id="demoError" class="demo-error" role="alert" hidden></p>
+          <div id="demoControls" class="demo-controls" hidden role="group" aria-label="デモ表示条件">
+            <button class="condition-button active" data-condition="A" type="button"><span>A</span>直接既知なし</button>
+            <button class="condition-button" data-condition="B" type="button" disabled aria-disabled="true"><span>B</span>既知1組</button>
+          </div>
+          <div class="system-mark" aria-hidden="true">[ M21 LAB ONLINE ]</div>
+        </div>
+      </header>
+
+      <section class="control-panel panel" aria-label="実験条件">
+        <div class="condition-switch" role="group" aria-label="表示条件">
+          <button class="condition-button active" data-condition="A" type="button">
+            <span>A</span>直接既知なし
+          </button>
+          <button class="condition-button" data-condition="B" type="button" disabled aria-disabled="true">
+            <span>B</span>既知1組
+          </button>
+        </div>
+        <form id="seedForm" class="seed-form">
+          <div class="form-field">
+            <label for="providerSelect">次回実行する方法 / PARTICIPANT PROVIDER</label>
+            <select id="providerSelect" name="participant_provider">
+              <option value="deepseek_autonomous">LLM（自律会話・ナラティブ）</option>
+              <option value="rule">ルール（テスト用・再現可能）</option>
+              <option value="rule_candidates_deepseek">LLM（クラウド・候補生成）</option>
+              <option value="deepseek_natural">LLM（自然会話・試験）</option>
+            </select>
+          </div>
+          <div class="form-field history-field">
+            <label for="historySelect">保存済みLLM履歴</label>
+            <select id="historySelect" name="history_id" disabled>
+              <option value="">履歴を確認中…</option>
+            </select>
+          </div>
+          <button id="loadHistoryButton" class="history-button" type="button" disabled>履歴を表示</button>
+          <div class="form-field">
+            <label for="rangeSelect">実行範囲</label>
+            <select id="rangeSelect" name="run_range">
+              <option value="single">条件Aのみ（会話確認）</option>
+              <option value="comparison">A/B比較</option>
+            </select>
+          </div>
+          <div class="form-field seed-field">
+            <label for="seedInput">ROOT SEED</label>
+            <input id="seedInput" name="seed" type="number" step="1" value="1" inputmode="numeric" />
+          </div>
+          <button id="runButton" class="run-button" type="submit">&gt; 再実行</button>
+        </form>
+        <p id="status" class="status" aria-live="polite">固定seedを読み込み中…
+        </p>
+        <div id="runProgress" class="run-progress" role="progressbar" aria-label="実行進行状況" aria-valuetext="" hidden>
+          <span class="run-progress-bar" aria-hidden="true"></span>
+        </div>
+      </section>
+
+      <section class="run-summary panel" aria-label="会話の概要">
+        <div class="summary-stat"><span>参加者</span><strong id="summaryParticipants">—</strong></div>
+        <div class="summary-stat"><span>ターン</span><strong id="summaryTurns">—</strong></div>
+        <div class="summary-stat"><span>発話</span><strong id="summaryUtterances">—</strong></div>
+        <div class="summary-stat summary-provider"><span>表示中の結果 / provider</span><strong id="summaryProvider">—</strong></div>
+      </section>
+
+      <section class="experiment-note panel" aria-label="比較の前提と注意">
+        <p><strong>今回の比較／比較の前提：</strong>A/B比較では、来場前にあかね・みどりがオンラインで直接知り合っているかどうかだけを変えます。条件Aのみでは、1つの会話経路を確認します。</p>
+        <p id="cautionText" class="caution"><strong>読み方：</strong>単一seedの試行であり、因果を示すものではありません。LLM選択時は最小限の匿名情報を設定されたクラウドへ送信し、出力は非決定的です。APIキー未設定時はルールで動作します。</p>
+        <details class="run-info">
+          <summary>RUN INFO（実行情報）</summary>
+          <dl>
+            <div><dt>参加者の行動</dt><dd id="participantProvider">—</dd></div>
+            <div><dt>話しかけ役</dt><dd id="talkInitiator">—</dd></div>
+            <div><dt>応答役</dt><dd id="responseProvider">—</dd></div>
+            <div><dt>モデル</dt><dd id="participantModel">—</dd></div>
+            <div><dt>プロンプト版</dt><dd id="promptVersion">—</dd></div>
+            <div><dt>LLM監査</dt><dd id="participantAudit">—</dd></div>
+            <div><dt>総レイテンシ</dt><dd id="participantLatency">—</dd></div>
+            <div><dt>採用</dt><dd id="adoptedCount">—</dd></div>
+            <div><dt>安全表現への置換</dt><dd id="hybridCount">—</dd></div>
+            <div><dt>ルール切替</dt><dd id="ruleFallbackCount">—</dd></div>
+            <div><dt>フォールバック段階</dt><dd id="fallbackStages">—</dd></div>
+            <div><dt>関係の評価</dt><dd id="relationshipEvaluator">—</dd></div>
+            <div><dt>設定</dt><dd id="configVersion">—</dd></div>
+            <div><dt>試行</dt><dd id="runShape">—</dd></div>
+            <div><dt>関係判定の目安</dt><dd id="relationshipThresholds">—</dd></div>
+            <div><dt>root seed</dt><dd id="rootSeed">—</dd></div>
+            <div id="conversationModeRow" hidden><dt>会話モード</dt><dd id="conversationMode">—</dd></div>
+            <div id="affectModeRow" hidden><dt>主観更新</dt><dd id="affectMode">—</dd></div>
+            <div id="comparisonSummaryRow" hidden><dt>M10比較</dt><dd id="comparisonSummary">—</dd></div>
+          </dl>
+          <span id="sampleBadge" class="sample-badge" hidden>固定サンプル表示</span>
+          <span id="fallbackWarning" class="fallback-warning" hidden></span>
+        </details>
+      </section>
+
+      <section class="main-grid">
+        <article class="panel stage-panel">
+          <div class="panel-heading">
+            <span>SHARED SPACE / NETWORK</span>
+            <strong id="turnLabel">START / 12</strong>
+          </div>
+          <div id="stage" class="stage" aria-label="4人の関係図">
+            <div class="room-label">[ ABSTRACT SHARED SPACE ]</div>
+            <svg id="relationLayer" class="relation-layer" viewBox="0 0 1000 560" aria-hidden="true"></svg>
+            <div class="person person-akane" data-person="akane"><span class="glyph">A</span><b>あかね</b><small>地域・暮らし</small></div>
+            <div class="person person-midori" data-person="midori"><span class="glyph">M</span><b>みどり</b><small>ものづくり・技術</small></div>
+            <div class="person person-koharu" data-person="koharu"><span class="glyph">K</span><b>こはる</b><small>展示・デザイン</small></div>
+            <div class="person person-kurumi" data-person="kurumi"><span class="glyph">R</span><b>くるみ</b><small>食・散歩・暮らし</small></div>
+          </div>
+          <div class="legend" aria-label="関係線の凡例">
+            <span><i class="legend-line online"></i>オンライン直接既知</span>
+            <span><i class="legend-line acquaintance"></i>現地：顔見知り</span>
+            <span><i class="legend-line familiar"></i>現地：親しみ</span>
+            <span><i class="legend-line talking"></i>今の会話</span>
+          </div>
+        </article>
+
+        <aside class="panel event-panel">
+          <div class="panel-heading"><span>CURRENT CONVERSATION</span><strong id="eventNumber">T00</strong></div>
+          <div id="eventCard" class="event-card" aria-live="polite">
+            <p class="idle-message">まだ会話は始まっていません。<br />開始時の関係を表示中です。</p>
+          </div>
+          <div class="playback-controls">
+            <button id="prevButton" type="button" disabled>◀ 前へ</button>
+            <button id="playButton" type="button" disabled>▶ 再生</button>
+            <button id="nextButton" type="button" disabled>次へ ▶</button>
+          </div>
+          <button id="resultButton" class="result-button" type="button" hidden>結果を見る</button>
+          <a id="analysisLink" class="analysis-link" href="results/" hidden>A/B分析を見る</a>
+          <ol id="turnLog" class="turn-log" aria-label="12ターンの会話一覧"></ol>
+        </aside>
+      </section>
+
+      <section class="panel metrics-panel">
+        <div class="panel-heading"><span>FINAL COMPARISON</span><strong id="seedLabel">このseedの1試行</strong></div>
+        <p class="metrics-note">数字はM2の計算結果をそのまま表示。この画面で再計算はしません。</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>指標</th><th id="metricAHeader">条件A</th><th id="metricBHeader">条件B（比較時のみ）</th></tr></thead>
+            <tbody id="metricsBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel narrative-panel" aria-labelledby="narrativeHeading">
+        <div class="panel-heading"><span id="narrativeHeading">今回の出会いの物語</span><strong id="narrativeCondition">条件A</strong></div>
+        <div id="narrativeContent" class="narrative-content" aria-live="polite">
+          <p class="idle-message">会話結果を読み込むと、ここに今回の記録が表示されます。</p>
+        </div>
+      </section>
+
+      <footer>
+        <span id="footerMeta">実行情報は RUN INFO に表示</span>
+        <span>← → キーでターン移動</span>
+        <a href="../lab/">旧実験ビュー</a>
+      </footer>
+    </main>
+    <div id="resultOverlay" class="result-overlay" hidden>
+      <section id="resultDialog" class="result-dialog" role="dialog" aria-modal="true" aria-labelledby="resultTitle" aria-describedby="resultNote" tabindex="-1">
+        <div class="result-dialog-heading">
+          <div>
+            <p class="result-kicker">SESSION RESULT</p>
+            <h2 id="resultTitle">今回のセッション</h2>
+          </div>
+          <button id="resultCloseButton" class="result-close-button" type="button" aria-label="結果画面を閉じる">×</button>
+        </div>
+        <p id="resultNote" class="result-note"></p>
+        <div class="result-facts" aria-label="セッション概要">
+          <div><span>条件</span><strong id="resultCondition">—</strong></div>
+          <div><span>方法</span><strong id="resultProvider">—</strong></div>
+          <div><span>ターン</span><strong id="resultTurns">—</strong></div>
+          <div><span>発話</span><strong id="resultUtterances">—</strong></div>
+        </div>
+        <div class="result-metrics" aria-label="関係の変化">
+          <div><span>新しい顔見知り</span><strong id="resultAcquaintance">—</strong></div>
+          <div><span>新しい親しみ</span><strong id="resultFamiliar">—</strong></div>
+          <div><span>関係上の孤立者</span><strong id="resultIsolated">—</strong></div>
+        </div>
+        <div class="result-narrative">
+          <p class="result-section-label">今回の出会い</p>
+          <h3 id="resultNarrativeTitle">—</h3>
+          <p id="resultNarrativeSummary"></p>
+          <p id="resultNarrativeEnding" class="result-narrative-ending"></p>
+        </div>
+        <div class="result-actions">
+          <button id="resultContinueButton" type="button">閉じて最後の会話を見る</button>
+          <button id="resultReplayButton" type="button">最初から再生</button>
+        </div>
+      </section>
+    </div>
+    <script src="ab-lab.js?v=m21-result-screen-1-20260829"></script>
+  </body>
+</html>

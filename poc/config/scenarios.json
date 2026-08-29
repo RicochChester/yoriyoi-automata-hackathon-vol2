@@ -1,0 +1,224 @@
+{
+  "participants": [
+    {
+      "id": "akane",
+      "name": "あかね",
+      "interests": ["展示", "表現", "地域活動"],
+      "visit_purpose": "見る",
+      "approachability": 1,
+      "receptivity": 3,
+      "conversation_style": "慎重な聞き役",
+      "outfit_color": "coral"
+    },
+    {
+      "id": "koharu",
+      "name": "こはる",
+      "interests": ["ものづくり", "展示", "学び"],
+      "visit_purpose": "学ぶ",
+      "approachability": 3,
+      "receptivity": 2,
+      "conversation_style": "好奇心旺盛",
+      "outfit_color": "mustard"
+    },
+    {
+      "id": "midori",
+      "name": "みどり",
+      "interests": ["写真", "展示", "記録"],
+      "visit_purpose": "発見する",
+      "approachability": 2,
+      "receptivity": 2,
+      "conversation_style": "観察してから話す",
+      "outfit_color": "forest"
+    },
+    {
+      "id": "aoi",
+      "name": "あおい",
+      "interests": ["地域活動", "イベント", "企画"],
+      "visit_purpose": "仲間を探す",
+      "approachability": 3,
+      "receptivity": 3,
+      "conversation_style": "話しかけやすい",
+      "outfit_color": "blue"
+    },
+    {
+      "id": "sumire",
+      "name": "すみれ",
+      "interests": ["企画", "ものづくり", "地域活動"],
+      "visit_purpose": "相談する",
+      "approachability": 2,
+      "receptivity": 3,
+      "conversation_style": "実践的",
+      "outfit_color": "lavender"
+    },
+    {
+      "id": "kurumi",
+      "name": "くるみ",
+      "interests": ["暮らし", "文化", "展示"],
+      "visit_purpose": "休憩する",
+      "approachability": 1,
+      "receptivity": 2,
+      "conversation_style": "ゆっくり関わる",
+      "outfit_color": "burgundy"
+    },
+    {
+      "id": "haru",
+      "name": "はる",
+      "interests": ["音楽", "地域活動", "イベント"],
+      "visit_purpose": "手伝う",
+      "approachability": 3,
+      "receptivity": 2,
+      "conversation_style": "気軽に声をかける",
+      "outfit_color": "sky"
+    },
+    {
+      "id": "nagi",
+      "name": "なぎ",
+      "interests": ["暮らし", "ものづくり", "記録"],
+      "visit_purpose": "ヒントを探す",
+      "approachability": 2,
+      "receptivity": 3,
+      "conversation_style": "相手の話を広げる",
+      "outfit_color": "teal"
+    },
+    {
+      "id": "sora",
+      "name": "そら",
+      "interests": ["写真", "文化", "企画"],
+      "visit_purpose": "知り合う",
+      "approachability": 2,
+      "receptivity": 2,
+      "conversation_style": "共通点から話す",
+      "outfit_color": "navy"
+    },
+    {
+      "id": "yui",
+      "name": "ゆい",
+      "interests": ["学び", "表現", "暮らし"],
+      "visit_purpose": "参加する",
+      "approachability": 1,
+      "receptivity": 3,
+      "conversation_style": "まず場に慣れる",
+      "outfit_color": "rose"
+    }
+  ],
+  "experiment_presets": [
+    {
+      "id": "poc",
+      "label": "POC（6人・8ステップ）",
+      "description": "現在の小規模デモ用設定。既存の6条件と同じ人数・ターン数で実行する。",
+      "participant_ids": ["akane", "koharu", "midori", "aoi", "sumire", "kurumi"],
+      "steps": 8,
+      "arrival_steps_by_venue": {
+        "exhibition": [1, 2, 3, 4, 5, 6],
+        "event": [1, 1, 1, 1, 1, 1],
+        "workshop": [1, 1, 1, 1, 1, 1],
+        "online_community": [1, 1, 1, 1, 1, 1]
+      }
+    },
+    {
+      "id": "expanded",
+      "label": "実験用（10人・24ステップ）",
+      "description": "GPU環境での比較実験を想定した、10人前後・数十ステップの設定。",
+      "participant_ids": ["akane", "koharu", "midori", "aoi", "sumire", "kurumi", "haru", "nagi", "sora", "yui"],
+      "steps": 24,
+      "arrival_steps_by_venue": {
+        "exhibition": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "event": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "workshop": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "online_community": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      }
+    },
+    {
+      "id": "online_community_first_prototype",
+      "label": "初回プロトタイプ（オンラインコミュニティ・4人・8ステップ）",
+      "description": "オンラインコミュニティ交流会の最初のプロトタイプ。あかね・こはる・みどり・くるみが全員ステップ1で到着する。",
+      "participant_ids": ["akane", "koharu", "midori", "kurumi"],
+      "steps": 8,
+      "arrival_steps_by_venue": {
+        "exhibition": [1, 1, 1, 1],
+        "event": [1, 1, 1, 1],
+        "workshop": [1, 1, 1, 1],
+        "online_community": [1, 1, 1, 1]
+      }
+    }
+  ],
+  "venues": [
+    {
+      "id": "exhibition",
+      "label": "展示",
+      "description": "展示物を見に、参加者がばらばらに来訪する。",
+      "arrival_steps": [1, 2, 3, 4, 5, 6],
+      "conversation_bonus": 0,
+      "conversation_start_step": 1,
+      "shared_interest_bonus": 2,
+      "unrelated_pair_penalty": 4,
+      "venue_topic_is_primary": false,
+      "topic": "展示物"
+    },
+    {
+      "id": "event",
+      "label": "鑑賞型イベント",
+      "description": "共通の発表を見に同時に集まるが、交流プログラムはない。",
+      "arrival_steps": [1, 1, 1, 1, 1, 1],
+      "conversation_bonus": 1,
+      "conversation_start_step": 4,
+      "shared_interest_bonus": 0,
+      "unrelated_pair_penalty": 0,
+      "venue_topic_is_primary": true,
+      "topic": "さっきの発表"
+    },
+    {
+      "id": "workshop",
+      "label": "ワークショップ",
+      "description": "同時に集まり、机や素材を介して会話の入口が生まれる。",
+      "arrival_steps": [1, 1, 1, 1, 1, 1],
+      "conversation_bonus": 3,
+      "conversation_start_step": 1,
+      "shared_interest_bonus": 0,
+      "unrelated_pair_penalty": 0,
+      "venue_topic_is_primary": false,
+      "topic": "机の上の素材"
+    }
+  ],
+  "relationship_modes": [
+    {
+      "id": "strangers",
+      "label": "初対面",
+      "description": "来場前に互いを知らない。",
+      "known_pairs": []
+    },
+    {
+      "id": "weakly_known_online",
+      "label": "オンラインで弱く既知",
+      "description": "2組だけが、投稿や名前を見たことがある程度に互いを認知している。",
+      "known_pairs": [["akane", "koharu"], ["midori", "aoi"]]
+    }
+  ],
+  "additional_scenarios": [
+    {
+      "id": "online_community_meetup",
+      "label": "オンラインコミュニティ交流会（共有空間・初回プロトタイプ）",
+      "venue_id": "online_community",
+      "venue_label": "オンラインコミュニティの共有空間",
+      "venue_description": "同じオンラインコミュニティに所属する参加者が、物理会場を設定せずに交流する抽象的な共有空間。",
+      "relationship_mode_id": "shared_online_community",
+      "relationship_mode_label": "同じオンラインコミュニティ（直接接続は1組）",
+      "arrival_steps": [1, 1, 1, 1],
+      "conversation_bonus": 2,
+      "conversation_start_step": 1,
+      "shared_interest_bonus": 2,
+      "unrelated_pair_penalty": 2,
+      "venue_topic_is_primary": false,
+      "topic": "コミュニティで共有した話題",
+      "known_pairs": [["akane", "koharu"]],
+      "online_community": {
+        "id": "yoriyoi-online-community",
+        "label": "Yoriyoi オンラインコミュニティ",
+        "description": "参加者全員が同じオンラインコミュニティに所属する共有空間。",
+        "membership": "all_selected_participants",
+        "direct_connection_premise": "直接のイベント前オンライン接続があるのは、あかね・こはるのみ。みどり・くるみは同じコミュニティの仲間だが、個別には面識がない。",
+        "direct_connection_pairs": [["akane", "koharu"]]
+      }
+    }
+  ]
+}
