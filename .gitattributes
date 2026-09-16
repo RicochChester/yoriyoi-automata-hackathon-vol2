@@ -1,0 +1,7 @@
+# Preserve evidence and fixture bytes across Windows/Linux.
+research_results/** -text whitespace=cr-at-eol
+tests/fixtures/** -text whitespace=cr-at-eol
+validation/** -text whitespace=cr-at-eol
+# Archived unified diffs retain their context whitespace.
+validation/*.patch -whitespace
+validation/event-format-v1-before-48.py -whitespace

@@ -1,0 +1,10 @@
+{
+  "status": "pass",
+  "changes_since_event24_in_existing_source": [
+    "poc/ab_poc/event_format_experiment.py"
+  ],
+  "core_engine_and_rule_providers_unchanged": true,
+  "existing_configuration_unchanged": true,
+  "v1_saved_AB_traces_exact_matches": 108,
+  "compileall_poc_pass": true
+}

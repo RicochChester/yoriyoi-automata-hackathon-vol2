@@ -1,0 +1,7 @@
+{
+  "status": "pass",
+  "seed_metric_rows": 18000,
+  "summary_rows": 231,
+  "numeric_checks": 6930,
+  "method": "CSV-only paired contrasts, independent arithmetic, 1000 seed clusters"
+}

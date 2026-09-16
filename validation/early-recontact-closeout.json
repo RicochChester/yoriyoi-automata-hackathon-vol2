@@ -1,0 +1,19 @@
+{
+  "status": "pass",
+  "independent_numeric_checks": 38220,
+  "seed_range": [
+    1101,
+    2100
+  ],
+  "source_files": 56,
+  "unchanged_previous_source_files": 54,
+  "output_files": 23,
+  "condition_runs": 60000,
+  "tests": 69,
+  "evidence_sha256": {
+    "validation/closeout_early_recontact.py": "aff01e87af3c314037c81cf7e80d998a14cfc17717f002c6cd28a0d0c9231525",
+    "validation/report_early_recontact.py": "a050c3d55a431cc36098d7a6e21bf563d7eaac778ca4d0192376f01c2941eb76",
+    "validation/early-recontact-tests.log": "c0e557720eca2f9b8d318e56a7d28350cd9fafda3a7d4fb6fd0a1c0911f99b0f",
+    "docs/EARLY_RECONTACT_METHOD.md": "d7ac99b5801c4ef2d0fd3f33b25c5d2c633cb5063b30b0ff62cd44204cfe497e"
+  }
+}

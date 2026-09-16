@@ -1,0 +1,30 @@
+{
+  "status": "pass",
+  "human_study_executed": false,
+  "files": {
+    "conversations.csv": {
+      "columns": 12,
+      "observations": 0
+    },
+    "information_events.csv": {
+      "columns": 8,
+      "observations": 0
+    },
+    "participants.csv": {
+      "columns": 10,
+      "observations": 0
+    },
+    "prior_pairs.csv": {
+      "columns": 6,
+      "observations": 0
+    },
+    "recontact_preferences.csv": {
+      "columns": 6,
+      "observations": 0
+    },
+    "sessions.csv": {
+      "columns": 9,
+      "observations": 0
+    }
+  }
+}

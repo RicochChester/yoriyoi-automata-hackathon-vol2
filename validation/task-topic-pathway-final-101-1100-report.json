@@ -1,0 +1,14 @@
+{
+  "report_sha256": "7ae2a279293925dc1e39d7fd7ff1ee23211c6ee725ea7214a835091c1bb952f2",
+  "contrast_sha256": "3ee34400eac49d44a1545f5e483ade5ba6a5f415309aa1fdb5e191760ca94f4e",
+  "generator_sha256": "cb15e8fab30209c676be9638c62793ea457ff1dbbceea0346412eaef9eea3869",
+  "test_log_sha256": "a2b8e4ff1334bc5f218eee9fdc45585c0d7ddc6758634fa84af6ca085ae94312",
+  "audit": {
+    "status": "pass",
+    "condition_runs": 144000,
+    "original_reproduced": 36000,
+    "summary_rows": 1176,
+    "full_contacts_information_reaction_equations_relationships_and_tables_checked": true,
+    "manifest_sha256": "ee15c6090b1e8c07cac01a88219809a8117cdd52e2ddfb316722b02128f90962"
+  }
+}

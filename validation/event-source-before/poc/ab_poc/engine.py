@@ -592,14 +592,7 @@ def run_condition(
     affect_enabled = conversation_provider is None or conversation_provider.affect_enabled
     active_provider = conversation_provider or participant_provider
 
-    actual_turn_order = []
     for turn, actor in enumerate(turn_order, start=1):
-        event_actor = getattr(participant_provider, "select_event_actor", None)
-        if callable(event_actor):
-            actor = event_actor(turn, actor, participants, tuple(events))
-            if actor not in participant_ids:
-                raise ValueError("event actor must be an existing participant")
-        actual_turn_order.append(actor)
         response_output = None
         candidates = tuple(person for person in participants if person.id != actor)
         context = ParticipantContext(
@@ -849,7 +842,7 @@ def run_condition(
         "participant_provider": _provider_name(active_provider, "unknown"),
         "relationship_evaluator": _provider_name(relationship_evaluator, "unknown"),
         "actor_order": [person.id for person in actor_order],
-        "turn_order": list(actual_turn_order),
+        "turn_order": list(turn_order),
         "turns": turn_logs,
         "evaluation_reasons": reasons,
         "snapshots": snapshots,
@@ -1044,8 +1037,6 @@ def run_ab(
         "relationship_evaluator": result_a["relationship_evaluator"],
         "scenario_version": config.scenario_version,
     }
-    if result_a["turn_order"] != result_b["turn_order"]:
-        controlled_fields.pop("turn_order")
     if conversation_provider_factory is not None:
         controlled_fields["conversation_provider"] = result_a["conversation_provider"]
         controlled_fields["conversation_mode"] = result_a["conversation_mode"]

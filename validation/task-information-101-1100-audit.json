@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "condition_runs": 72000,
+  "pair_rows": 432000,
+  "all_contacts_and_familiar_baselines_exact": true,
+  "all_information_transfers_and_relationship_states_verified": true,
+  "all_csv_and_summary_recomputed": true,
+  "source_and_output_hashes_match": true
+}

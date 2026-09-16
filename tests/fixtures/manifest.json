@@ -1,0 +1,146 @@
+{
+  "event-v1/akane-koharu.jsonl.gz": {
+    "records": 18,
+    "sha256": "89a95171b792905b63e0e0787b13db2a47583a12dd7bfeb7c0d0c2288d6d15f8",
+    "source_dataset": "event-smoke-101-102",
+    "source_sha256": "475522695e92c01150f8738ecc736ec7fed0cbc750755c1e4c209132d4312afc"
+  },
+  "event-v1/akane-kurumi.jsonl.gz": {
+    "records": 18,
+    "sha256": "0b3d6b099c95b023ecb48181cf2380b4d59a69ba929f367a4fb02fd1838c7499",
+    "source_dataset": "event-smoke-101-102",
+    "source_sha256": "6fcd60c2ea28b1ce903c6ef322be1a909f4897cd18bad7e10b2f9e0db1633351"
+  },
+  "event-v1/akane-midori.jsonl.gz": {
+    "records": 18,
+    "sha256": "ae2cfc062789731f028301944c522e29a7382cbc2baa5e3eb03865b8b99dc9e7",
+    "source_dataset": "event-smoke-101-102",
+    "source_sha256": "e88f8dada6f23d50a64adec24fbffb0aa69f08fac7cbe2a768a61a37e67ea2c7"
+  },
+  "event-v1/koharu-kurumi.jsonl.gz": {
+    "records": 18,
+    "sha256": "69cab22b5a0052db9e14c0f59ffca00111fb8babf211348768203451be2ddc24",
+    "source_dataset": "event-smoke-101-102",
+    "source_sha256": "b3c181611d4707ff558beeb839315a11128d68bc6f8449a6522aaddb1a4c3254"
+  },
+  "event-v1/koharu-midori.jsonl.gz": {
+    "records": 18,
+    "sha256": "ef92bb23c4995433658675c0eb5fa0374c74930871053f207b54eab08302f4ce",
+    "source_dataset": "event-smoke-101-102",
+    "source_sha256": "cd68dc4d3795e965958fc56627dc5bc5abc925fb8b56155336dc1b602647d08c"
+  },
+  "event-v1/kurumi-midori.jsonl.gz": {
+    "records": 18,
+    "sha256": "cb47a0d388b9897ab8d827ba91da158bc124cf6a4f183200ed66aa830b9f1bef",
+    "source_dataset": "event-smoke-101-102",
+    "source_sha256": "ed930a6b530a42e26ddea93088320eb04d42a2f1ca5e5217544398c26d53cd94"
+  },
+  "event-v2/akane-koharu.jsonl.gz": {
+    "records": 3,
+    "sha256": "1aee560701eac4c2ff97855578f91d8c3489075484f1ef2745678f53c2f7c417",
+    "source_dataset": "event-formats-48-101-1100",
+    "source_sha256": "dc06ccda2f9ae0a8ba7de4da47a3770e6915eab8da6877b0a683ef527eae0507"
+  },
+  "event-v2/akane-kurumi.jsonl.gz": {
+    "records": 3,
+    "sha256": "fa7bf6d29ffd5b062691625dba6a7b50fccdf4172b73a6e58b714fa406412e05",
+    "source_dataset": "event-formats-48-101-1100",
+    "source_sha256": "70060d611db1f752e55afa92c5bdf38e669302a6b8301125964b8de71d135d41"
+  },
+  "event-v2/akane-midori.jsonl.gz": {
+    "records": 3,
+    "sha256": "14b24cd00d81ac9a5687a9694350a71b2730357969b03b38da138ce6b2a13331",
+    "source_dataset": "event-formats-48-101-1100",
+    "source_sha256": "c330047766fcdbb91941e16f526dfe60349915d981061dbb5240a98341bbc501"
+  },
+  "event-v2/koharu-kurumi.jsonl.gz": {
+    "records": 3,
+    "sha256": "032f5e18fcf19fe1b909dbca504accc35e3e8b7e97b7728c5aafbc769f407132",
+    "source_dataset": "event-formats-48-101-1100",
+    "source_sha256": "987c5147c78bf64fa52f40ceaa002c04a41cfa72c73f992f9af46a9997444d5a"
+  },
+  "event-v2/koharu-midori.jsonl.gz": {
+    "records": 3,
+    "sha256": "e5d29b19bf716587030e96d28cac85218baa19787c066ea4e4b9f9bc9df4c448",
+    "source_dataset": "event-formats-48-101-1100",
+    "source_sha256": "7e2fa9258622576a6c5a0866c8a452702662d0b8379c67b24dddad730f5d1330"
+  },
+  "event-v2/kurumi-midori.jsonl.gz": {
+    "records": 3,
+    "sha256": "4b1e1e1a59214b60f9ec13b541459108e878afc70fc5c0c812b7c87c581832aa",
+    "source_dataset": "event-formats-48-101-1100",
+    "source_sha256": "4816b773ecc75db753afda07a840b48c55f11d8ecb9f2ff388c2f2814cc59d08"
+  },
+  "information/akane-koharu.jsonl.gz": {
+    "records": 6,
+    "sha256": "b27154c6a471a65b8fb2ecbfa1f5b9219b6b7e9253004eb492706c66ffaf0571",
+    "source_dataset": "task-information-101-1100",
+    "source_sha256": "86e4b16f861894642aacdb743b38f5a834dbdb66ed14cc3824ec75fa7df5b94a"
+  },
+  "information/akane-kurumi.jsonl.gz": {
+    "records": 6,
+    "sha256": "8b10d30764a937da40e34b5cf2f242dfef58516386b53364487186f429afd7c1",
+    "source_dataset": "task-information-101-1100",
+    "source_sha256": "ed04f57c4767e9eca976b55314310b5574421e510e3e2bbfc04ec52fd2ac7a84"
+  },
+  "information/akane-midori.jsonl.gz": {
+    "records": 6,
+    "sha256": "8043d3f51785055627ef7e84ae15c3a9de69a2833b38bf436660fa39f6183415",
+    "source_dataset": "task-information-101-1100",
+    "source_sha256": "ea371a2d3359258251dff1ab0485f36dcc7bbb259739eeaed663717ad90bca0b"
+  },
+  "information/koharu-kurumi.jsonl.gz": {
+    "records": 6,
+    "sha256": "61a99464ac9b451b2b507ec9328e0680faba4eebe98b4acbab3562c79321daa0",
+    "source_dataset": "task-information-101-1100",
+    "source_sha256": "2e33048357861c8ce9b7284d23196e060e0be5ad8f68ffb9bab8f657244539d4"
+  },
+  "information/koharu-midori.jsonl.gz": {
+    "records": 6,
+    "sha256": "095150a5755011e3951c136a4a12ab5e8851d82149906146cc3bfefbee395e5b",
+    "source_dataset": "task-information-101-1100",
+    "source_sha256": "be64c64f9ca1c09b9c508b68b09827e7969c8117ee05c8c7cbafd5841f06cd55"
+  },
+  "information/kurumi-midori.jsonl.gz": {
+    "records": 6,
+    "sha256": "f6e55cc1250de085cc21da79afbfb85e7d72e26947e80e3be4ef358f93cad43b",
+    "source_dataset": "task-information-101-1100",
+    "source_sha256": "a6203cfd44474763e2188e7786d9a0cedadfc44a4fd7c8d9fd93a3e50f616e74"
+  },
+  "pair-identity/akane-koharu/traces.jsonl.gz": {
+    "records": 4,
+    "sha256": "ed51a3a70ce76ec5b39bcc8f97c905d39ab50fa92e9908f9ebb5a3eb5105a93b",
+    "source_dataset": "pair-identity-101-1100",
+    "source_sha256": "1e166b25165bf89465a2d34cd351f597c08ba9d423029d96a5e520f7c97b68e5"
+  },
+  "pair-identity/akane-kurumi/traces.jsonl.gz": {
+    "records": 4,
+    "sha256": "849c294c8e02a6efcf72d9ea352d12d57825e808d696de883b46fb39e6c1ea43",
+    "source_dataset": "pair-identity-101-1100",
+    "source_sha256": "8c888ed40281cd59d91dc5e6c3be04242a2d2f6470474c9308469f991a651bf8"
+  },
+  "pair-identity/akane-midori/traces.jsonl.gz": {
+    "records": 4,
+    "sha256": "4c6252b6e1761a95e8c9ef6bb8179493def245edd4dc995602326645e915c704",
+    "source_dataset": "pair-identity-101-1100",
+    "source_sha256": "c90b7ad0c3b85adeef874be06265e23fe21ea7462b84e7f86a3142d932abe78d"
+  },
+  "pair-identity/koharu-kurumi/traces.jsonl.gz": {
+    "records": 4,
+    "sha256": "40153c04616f20d4ca254c173c2ebdf8f9fbcded7e30854442e063db17948dd1",
+    "source_dataset": "pair-identity-101-1100",
+    "source_sha256": "7fc192ca2faf4efd3d42b9b1dff4b4611ba3502bd8f373e383b70b6b65d9557a"
+  },
+  "pair-identity/koharu-midori/traces.jsonl.gz": {
+    "records": 4,
+    "sha256": "3421c8e20117f69f6eccba73f95eb5c339812a26e8d6dcdb39eb9b597dc7120f",
+    "source_dataset": "pair-identity-101-1100",
+    "source_sha256": "c74e2c5644d89a702dc39ef8bba6e726ff48c86103b5b28fcaf11dacab8b59c5"
+  },
+  "pair-identity/kurumi-midori/traces.jsonl.gz": {
+    "records": 4,
+    "sha256": "f4f9631b75e35fa9eb40b4f7e4601d284b7f89aead63b9805e24976f7ea4c9e6",
+    "source_dataset": "pair-identity-101-1100",
+    "source_sha256": "ab0372ab262131dc69d804ccdeed408600bdbada28f0d8a98acd43dc9cb335ca"
+  }
+}

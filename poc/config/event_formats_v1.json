@@ -1,0 +1,8 @@
+{
+  "version": "yoriyoi.event_formats.v1",
+  "turns": 24,
+  "weak_turns": [4, 8, 12, 16, 20, 24],
+  "strong_turns": [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24],
+  "host_selection_bonus": 1.0,
+  "task_roles": ["情報を渡す", "作業結果を確認する", "次の工程へつなぐ"]
+}

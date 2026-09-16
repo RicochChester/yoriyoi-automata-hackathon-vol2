@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "condition_runs": 48000,
+  "pair_rows": 288000,
+  "baseline_AB_records_matched": 4000,
+  "A_invariance_checks": 20000,
+  "all_states_rebuilt": true,
+  "all_24_estimates_and_60_contrasts_recomputed": true
+}
