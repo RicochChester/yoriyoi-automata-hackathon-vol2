@@ -1,0 +1,6 @@
+{
+  "status": "pass",
+  "task_timing_rows": 24,
+  "partitions_match_primary_counts": true,
+  "input_and_output_hashes_match": true
+}

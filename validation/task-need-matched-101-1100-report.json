@@ -1,0 +1,13 @@
+{
+  "report_sha256": "8ee0f9017a416d79ddb051df26b2f33afffb650096ee82eb33055ef1ad119cfb",
+  "generator_sha256": "76f2be9af7f4c2ed5207047a7a48c5d46bcde181347a7dcb2c37d86a18d0aa6c",
+  "test_log_sha256": "cd473a6a355016d583f5a1e2a8e0f9c7bcee7241bc56fd4604f65508f2667e30",
+  "audit": {
+    "status": "pass",
+    "condition_runs": 72000,
+    "matched_comparisons": 36000,
+    "turn_probability_distributions_matched": 1728000,
+    "summary_rows": 210,
+    "manifest_sha256": "26b52e21d1e344f4954b9705ea9733667a9929f13b611a752cc4315b45c0aa0a"
+  }
+}

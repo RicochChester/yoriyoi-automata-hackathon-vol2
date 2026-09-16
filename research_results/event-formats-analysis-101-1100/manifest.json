@@ -1,0 +1,10 @@
+{
+  "status": "complete",
+  "purpose": "descriptive postprocessing, no additional simulations",
+  "input_manifest_sha256": "d9ae24166595059f96328a4ea85052b0e5b4448b707e132ea9dc136c75cdd68e",
+  "output_sha256": {
+    "secondary_paired.csv": "dc78a778c547bd75a02f661e683e40cfde5d7cb66b18dd881c0c46e256feebf2",
+    "secondary_paired.json": "eeeee9bc3e5c0fa47be2618b03d18c0233ab25c34ac07d3b746fb135c428c3a6",
+    "task_timing.csv": "b9a40f2aa82529c01506cb4a4e2981c1deb427db2c53430db96615d3960778fa"
+  }
+}

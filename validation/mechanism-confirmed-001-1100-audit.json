@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "paired_runs": 37400,
+  "condition_runs": 74800,
+  "pairs_rebuilt_from_events": 448800,
+  "no_missing_or_duplicate_cases_seeds": true,
+  "raw_CSV_JSON_and_contrasts_consistent": true,
+  "source_and_output_hashes_match": true
+}

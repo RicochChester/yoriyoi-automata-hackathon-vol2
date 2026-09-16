@@ -1,0 +1,10 @@
+{
+  "status": "pass",
+  "seed_count": 100,
+  "condition_run_count": 200,
+  "pair_row_count": 1200,
+  "original_poc_files_byte_identical": 43,
+  "all_raw_run_hashes_match_pre_edit_baseline": true,
+  "CSV_JSON_raw_run_aggregation_consistent": true,
+  "source_and_output_checksums_valid": true
+}

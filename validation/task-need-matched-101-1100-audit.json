@@ -1,0 +1,8 @@
+{
+  "status": "pass",
+  "condition_runs": 72000,
+  "matched_comparisons": 36000,
+  "turn_probability_distributions_matched": 1728000,
+  "summary_rows": 210,
+  "manifest_sha256": "26b52e21d1e344f4954b9705ea9733667a9929f13b611a752cc4315b45c0aa0a"
+}

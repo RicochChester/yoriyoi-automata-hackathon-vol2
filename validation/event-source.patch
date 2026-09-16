@@ -1,0 +1,104 @@
+--- before/poc/ab_poc/engine.py
++++ after/poc/ab_poc/engine.py
+@@ -592,7 +592,14 @@
+     affect_enabled = conversation_provider is None or conversation_provider.affect_enabled
+     active_provider = conversation_provider or participant_provider
+ 
++    actual_turn_order = []
+     for turn, actor in enumerate(turn_order, start=1):
++        event_actor = getattr(participant_provider, "select_event_actor", None)
++        if callable(event_actor):
++            actor = event_actor(turn, actor, participants, tuple(events))
++            if actor not in participant_ids:
++                raise ValueError("event actor must be an existing participant")
++        actual_turn_order.append(actor)
+         response_output = None
+         candidates = tuple(person for person in participants if person.id != actor)
+         context = ParticipantContext(
+@@ -842,7 +849,7 @@
+         "participant_provider": _provider_name(active_provider, "unknown"),
+         "relationship_evaluator": _provider_name(relationship_evaluator, "unknown"),
+         "actor_order": [person.id for person in actor_order],
+-        "turn_order": list(turn_order),
++        "turn_order": list(actual_turn_order),
+         "turns": turn_logs,
+         "evaluation_reasons": reasons,
+         "snapshots": snapshots,
+@@ -1037,6 +1044,8 @@
+         "relationship_evaluator": result_a["relationship_evaluator"],
+         "scenario_version": config.scenario_version,
+     }
++    if result_a["turn_order"] != result_b["turn_order"]:
++        controlled_fields.pop("turn_order")
+     if conversation_provider_factory is not None:
+         controlled_fields["conversation_provider"] = result_a["conversation_provider"]
+         controlled_fields["conversation_mode"] = result_a["conversation_mode"]
+--- before/poc/ab_poc/rule_providers.py
++++ after/poc/ab_poc/rule_providers.py
+@@ -75,6 +75,9 @@
+     name = "rule-talk-initiator"
+     version = "ab_poc_rules_v1"
+ 
++    def shared_interests(self, actor: Participant, target: Participant) -> tuple[str, ...]:
++        return _shared_interests(actor, target)
++
+     def initiate(self, context: ParticipantContext) -> Initiation:
+         actor = context.actor
+         candidates = tuple(context.candidates)
+@@ -100,7 +103,7 @@
+         weight = weights.base
+         if state is not None and state.online_known is OnlineKnown.DIRECT:
+             weight += weights.online_known_bonus
+-        if _shared_interests(actor, candidate):
++        if self.shared_interests(actor, candidate):
+             weight += weights.shared_interest_bonus
+         if any(event.response is ResponseKind.POSITIVE for event in pair_events):
+             weight += weights.prior_positive_bonus
+@@ -120,7 +123,7 @@
+         )
+         if online_topics:
+             return online_topics[0]
+-        shared = _shared_interests(context.actor, target)
++        shared = self.shared_interests(context.actor, target)
+         if shared:
+             options = shared
+         else:
+@@ -147,6 +150,9 @@
+ 
+     name = "rule-response-provider"
+     version = "ab_poc_rules_v1"
++
++    def shared_interests(self, actor: Participant, target: Participant) -> tuple[str, ...]:
++        return _shared_interests(actor, target)
+ 
+     def respond(self, context: ParticipantContext, initiation: Initiation) -> ResponseKind:
+         target = self._target(context, initiation.target_id)
+@@ -198,7 +204,7 @@
+         rules = context.rules.reaction
+         state = _state_for(context.pair_states, context.actor.id, target.id)
+         online_known = state is not None and state.online_known is OnlineKnown.DIRECT
+-        shared = bool(_shared_interests(context.actor, target))
++        shared = bool(self.shared_interests(context.actor, target))
+         prior_positive = any(event.response is ResponseKind.POSITIVE for event in pair_events)
+         points = rules.base
+         if online_known:
+--- before/poc/ab_poc/bridge_experiment.py
++++ after/poc/ab_poc/bridge_experiment.py
+@@ -29,7 +29,7 @@
+ FORMED = {OnsiteRelationship.ACQUAINTANCE.value, OnsiteRelationship.FAMILIAR.value}
+ 
+ 
+-def analyze_ab(result: Mapping[str, Any]) -> tuple[list[dict[str, Any]], dict[str, Any]]:
++def analyze_ab(result: Mapping[str, Any], *, require_same_actor_order: bool = True) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+     """Validate a complete matched A/B run and extract all six pairs per side.
+ 
+     Pair types in BOTH conditions refer to B's configured known pair. A's
+@@ -63,6 +63,8 @@
+         if run["participants"] != people:
+             raise ValueError("A/B must contain identical participants")
+         for field in ("rules", "turn_order", "participant_provider", "relationship_evaluator"):
++            if field == "turn_order" and not require_same_actor_order:
++                continue
+             if run[field] != runs["A"][field]:
+                 raise ValueError(f"A/B must share {field}")
+         final = run["final_relationships"]

@@ -1,0 +1,23 @@
+{
+  "status": "pass",
+  "loopback_only": true,
+  "HTTP_equals_run_ab_seed_1": true,
+  "routes": {
+    "/api/health": {
+      "status": 200,
+      "bytes": 42
+    },
+    "/ab-lab/": {
+      "status": 200,
+      "bytes": 13114
+    },
+    "/ab-lab/ab-lab.js": {
+      "status": 200,
+      "bytes": 58672
+    },
+    "/api/ab-poc/compare?seed=1&participant_provider=rule": {
+      "status": 200,
+      "bytes": 88933
+    }
+  }
+}

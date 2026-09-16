@@ -1,0 +1,12 @@
+{
+  "version": "post-task-recontact-v1",
+  "task_case": "task_strong",
+  "task_turns": 48,
+  "free_turns": 24,
+  "seed_start": 101,
+  "seed_end": 1100,
+  "theta_values": [-1, 0, 1],
+  "received_count_normalizer": 3,
+  "weight_base": 2,
+  "empirical_parameter_estimate": false
+}

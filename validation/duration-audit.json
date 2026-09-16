@@ -1,0 +1,10 @@
+{
+  "status": "pass",
+  "paired_runs": 4000,
+  "pair_rows": 48000,
+  "prefix_checks": 6000,
+  "previous_12_turn_results_matched": 1000,
+  "all_snapshots_rebuilt_from_events": true,
+  "formation_times_and_unformed_counts_match": true,
+  "CSV_JSON_and_hashes_match": true
+}

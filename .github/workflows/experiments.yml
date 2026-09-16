@@ -1,0 +1,31 @@
+name: Experiment checks
+on:
+  pull_request:
+    branches: [main, additional/hibiki-experiments]
+  push:
+    branches: ["codex/**", additional/hibiki-experiments]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Unit and regression tests
+        run: python -m unittest discover -s tests -v
+      - name: HTTP smoke (loopback, no external API)
+        run: python validation/smoke_http.py
+      - name: Minimal experiment and saved-output audit
+        run: |
+          python -m poc.ab_poc.early_recontact_experiment --seed-start 101 --seed-end 102 --workers 2 --output results/ci-early
+          python validation/verify_early_recontact.py --output results/ci-early --report validation/ci-early-audit.json

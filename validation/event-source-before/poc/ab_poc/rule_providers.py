@@ -75,9 +75,6 @@ class RuleTalkInitiator:
     name = "rule-talk-initiator"
     version = "ab_poc_rules_v1"
 
-    def shared_interests(self, actor: Participant, target: Participant) -> tuple[str, ...]:
-        return _shared_interests(actor, target)
-
     def initiate(self, context: ParticipantContext) -> Initiation:
         actor = context.actor
         candidates = tuple(context.candidates)
@@ -103,7 +100,7 @@ class RuleTalkInitiator:
         weight = weights.base
         if state is not None and state.online_known is OnlineKnown.DIRECT:
             weight += weights.online_known_bonus
-        if self.shared_interests(actor, candidate):
+        if _shared_interests(actor, candidate):
             weight += weights.shared_interest_bonus
         if any(event.response is ResponseKind.POSITIVE for event in pair_events):
             weight += weights.prior_positive_bonus
@@ -123,7 +120,7 @@ class RuleTalkInitiator:
         )
         if online_topics:
             return online_topics[0]
-        shared = self.shared_interests(context.actor, target)
+        shared = _shared_interests(context.actor, target)
         if shared:
             options = shared
         else:
@@ -150,9 +147,6 @@ class RuleResponseProvider:
 
     name = "rule-response-provider"
     version = "ab_poc_rules_v1"
-
-    def shared_interests(self, actor: Participant, target: Participant) -> tuple[str, ...]:
-        return _shared_interests(actor, target)
 
     def respond(self, context: ParticipantContext, initiation: Initiation) -> ResponseKind:
         target = self._target(context, initiation.target_id)
@@ -204,7 +198,7 @@ class RuleResponseProvider:
         rules = context.rules.reaction
         state = _state_for(context.pair_states, context.actor.id, target.id)
         online_known = state is not None and state.online_known is OnlineKnown.DIRECT
-        shared = bool(self.shared_interests(context.actor, target))
+        shared = bool(_shared_interests(context.actor, target))
         prior_positive = any(event.response is ResponseKind.POSITIVE for event in pair_events)
         points = rules.base
         if online_known:

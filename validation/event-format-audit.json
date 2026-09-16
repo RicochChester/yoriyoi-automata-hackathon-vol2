@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "condition_runs": 108000,
+  "pair_rows": 648000,
+  "previous_free_AB_runs_matched": 6000,
+  "task_shuffle_condition_matches": 24000,
+  "all_states_rebuilt": true,
+  "schedules_host_history_and_logs_verified": true,
+  "all_summary_and_pooled_metrics_recomputed": true,
+  "source_output_hashes_match": true
+}

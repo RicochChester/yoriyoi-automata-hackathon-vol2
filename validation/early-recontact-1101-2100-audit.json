@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "condition_runs": 60000,
+  "conversations": 2880000,
+  "seed_metric_rows": 90000,
+  "summary_rows": 1260,
+  "contrast_rows": 84,
+  "manifest_sha256": "4350a6268e909a1b38519cb36f23575f909f23bb2a04a91d2668822ca3864120"
+}

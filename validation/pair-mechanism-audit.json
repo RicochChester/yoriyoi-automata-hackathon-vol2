@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "actual_condition_runs": 96000,
+  "condition_checkpoints": 384000,
+  "pair_rows": 2304000,
+  "baseline_AB_checkpoints_matched": 24000,
+  "legacy_12_turn_cases_matched": 8000,
+  "all_48_turn_states_reconstructed": true,
+  "all_off_behavior_equal": true,
+  "clamp_bridge_behavior_matches_donor": true,
+  "all_192_estimates_168_contrasts_recomputed": true,
+  "source_and_output_hashes_match": true
+}

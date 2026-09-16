@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "source_manifest_sha256": "ee064058ae255c4224322b3668e7464a8ce7907a89e0fab89008139eb85cf40b",
+  "script_sha256": "61dcd683bed38069ea86b58832166f5c65087d55a5613c68f2a6a9b966b2ea58",
+  "seed_rows": 78000,
+  "primary_contrasts_reproduced": true,
+  "rate_count_scaling_verified": true,
+  "task_timing_partition_verified": true,
+  "output_sha256": {
+    "secondary_contrasts.csv": "fd481f66ddb20506425958ebf993672b4a553e08043c8161f73288b976035350",
+    "secondary_contrasts.json": "b9ab46ff4943b779c27593095a238dc57179ae8812d06487d6293f897d99b49b",
+    "task_vs_shuffle.csv": "23573fe4c41ab88ee690ec14d537621c60773bb3d0a00bc81da70d22a0655b2a",
+    "task_vs_shuffle.json": "6afee353407953973292bf7d2464400c73505bc7af3b7a7dcba34583dbebf515"
+  },
+  "report_sha256": "c1dcb6b4cfde2afc204b0c4883d6f968a03e4dff2c48bc3cf884cbbb3f835d01",
+  "report_includes_reviewed_interpretation_and_final_validation": true
+}

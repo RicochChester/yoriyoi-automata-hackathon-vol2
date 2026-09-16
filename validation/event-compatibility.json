@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "baseline_12_turn_seeds_1_100_exact": true,
+  "original_files_unchanged": 41,
+  "authorized_original_files_changed": [
+    "poc/ab_poc/engine.py",
+    "poc/ab_poc/rule_providers.py"
+  ]
+}

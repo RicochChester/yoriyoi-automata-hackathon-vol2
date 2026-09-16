@@ -1,0 +1,8 @@
+{
+  "status": "pass",
+  "condition_runs": 36000,
+  "summary_rows": 231,
+  "prefix_turns_matched": 48,
+  "selection_reaction_information_and_relationships_checked": true,
+  "manifest_sha256": "501e0a8137cadbf5127b6e92916700fd009bfaab933e7c62a26e437ef24f9423"
+}

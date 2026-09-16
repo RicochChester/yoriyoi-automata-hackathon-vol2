@@ -1,0 +1,10 @@
+{
+  "version": "yoriyoi.task_information.v1",
+  "topics": ["地域", "展示", "ものづくり", "食"],
+  "strengths": ["weak", "medium", "strong"],
+  "seed_start": 101,
+  "seed_end": 1100,
+  "transfer_limit_per_conversation": 1,
+  "transfer_independent_of_social_response": true,
+  "reset_between_blocks": false
+}
